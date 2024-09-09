@@ -1,0 +1,95 @@
+.container {
+    padding: 24px;
+    background-color: #F4F4F4; /* Ajusta el color según sea necesario */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.heading-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Evita el salto de línea */
+  }
+  
+  .heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-right: 8px; /* Añade espacio entre los elementos */
+  }
+  
+  .highlight {
+    color: #14b8a6; /* Color teal */
+    font-weight: 600;
+    margin: 0 8px; /* Añade espacio alrededor del nombre */
+  }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+  
+  .search-input {
+    border: 1px solid #e5e7eb; /* Color del borde */
+    border-radius: 4px;
+    padding: 8px;
+    flex-grow: 1;
+  }
+
+  .sort-select {
+    margin-left: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  .patient-table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: solid #fcfcfc 1px;
+  }
+
+  .patient-table th,
+  .patient-table td {
+    padding: 8px;
+  }
+  
+  .patient-table th {
+    color: #6b7280; /* Color muted-foreground */
+    border-top: none;
+    border-bottom:solid #F4F4F4 2px;
+  }
+
+  .patient-table td:first-child, .patient-table th:first-child {
+    border-left: none;
+  }
+  
+
+  .status {
+    border-radius: 9999px;
+    padding: 4px 8px;
+    display: inline-block;
+    width: 120px;
+  }
+
+  .status-recuperado {
+    color: #38b56d;
+    background-color: #b3e3c7;
+  }
+
+  .status-tratamiento {
+    background-color: #b6d3f9; /* Color accent */
+    color: #5195f0;
+  }
+
+  .status-pendiente {
+    color: #ed6565;
+    background-color: #f8c4c4;
+  }
