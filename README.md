@@ -72,3 +72,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # MC_Web
 >>>>>>> a85b3b9287c01b23e74deb63847b900e2721a557
+
+# Project Overview
+This project is built using React, a powerful and flexible JavaScript library for building user interfaces. React was chosen for its component-based architecture, which allows for easy reuse of UI elements and efficient state management across the application.
+
+# Why React?
+React enables a dynamic, interactive experience by breaking down the user interface into smaller, manageable components. Each component is self-contained and can be easily modified or reused across different parts of the application, promoting scalability and maintainability. By using React, we ensure the app is both performant and adaptable to future changes.
+
+# Component Structure
+Each component in this project is organized in individual `.js` files, promoting modularity and cleaner code. This structure allows for better readability and separation of concerns, as each component focuses on a single responsibility within the application.
+
+# Styling: From CSS to Tailwind CSS
+Currently, we are using traditional CSS to style the application. However, we plan to transition to Tailwind CSS for several reasons:
+
+* **Utility-first approach:** Tailwind CSS offers a utility-first approach to styling, meaning that instead of writing custom stylesheets, we can use predefined classes directly in our markup. This significantly speeds up development time.
+* **Consistency**: Tailwind enforces a consistent design language throughout the project by providing a standard set of utilities and spacing rules.
+* **Customization**: Despite its utility-first nature, Tailwind is highly customizable, allowing us to easily extend or override styles as needed.
+* **Efficency**: By eliminating the need for custom CSS files, Tailwind helps keep the bundle size small, improving performance and loading times for end users.
+
+By integrating Tailwind CSS in the near future, we aim to enhance the scalability, efficiency, and design consistency of our application.
