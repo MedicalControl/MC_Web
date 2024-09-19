@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3px;
+    background-color: #ffffff;
+    border-bottom: 1px solid black;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+.profile-picture {
+    border-radius: 50%;
+    width: 40px; /* Ajusta el tamaño */
+    height: 40px; /* Ajusta el tamaño */
+    border: 2px solid black; /* Borde alrededor de la imagen */
+    margin-left: 10px;
+}
+
+
+.name {
+    color: #000000;
+    margin: 0;
+}   
+
+.role {
+    color: #000000;
+    margin: 0;
+    font-weight: bold;
+}
