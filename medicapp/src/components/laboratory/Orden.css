@@ -1,0 +1,120 @@
+.card {
+    width: 500px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 40px;
+}
+
+.orden {
+    margin-left: 8px; /* Espaciado entre el icono y el texto */
+    text-align: center;
+    flex-grow: 1;
+
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    margin-left: 40px;
+}
+
+.icon-close {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.card-content {
+    padding-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    align-items: column;
+}
+
+textarea {
+    height: 40px;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 8px;
+    font-size: 0.875rem;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 16px;
+    flex: 1;
+}
+
+input, select, textarea {
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb; /* Línea debajo */
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    flex: 2;
+}
+
+input:focus, select:focus,textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #3b82f6;
+}
+
+.firma {
+    margin-top: 65px;
+    padding-top: 12px;
+    text-align: right;
+    font-size: 0.8rem;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.firma-imagen {
+    max-width: 150px;
+    height: auto;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.firma-texto {
+    top: 30px;
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

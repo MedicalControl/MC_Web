@@ -1,0 +1,169 @@
+.card-examen {
+    width: 500px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.card-header-examen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.card-title-examen {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 40px;
+}
+
+.examen {
+    margin-left: 8px; /* Espaciado entre el icono y el texto */
+    text-align: center;
+    flex-grow: 1;
+
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    margin-left: 40px;
+}
+
+.icon-close {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 13px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    width: 95%;
+    margin: auto;
+}
+
+
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: -7px 0 10px 0; /* Aplica un margen negativo en la parte superior */
+}
+
+.info-table td {
+    font-size: 9px;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+
+.info-table tr {
+    line-height: 0.6rem;
+}
+
+.info-table strong {
+    font-weight: bold;
+    margin-right: 5px;
+    flex: 1;
+}
+
+
+/* resultados del examen fisico */
+.table-fisico {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.table-fisico tr {
+    line-height: 0.4rem;
+}
+
+.table-fisico-head {
+    background-color: #e8e4e4;
+}
+
+.table-fisico-header {
+    background-color: #e8e4e4;
+}
+
+.table-fisico-cell {
+    font-size: 9px;
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.table-fisico-body-cell {
+    color: #1f2937
+}
+
+.cell-bold {
+    font-weight: bold;
+}
+
+.table-title {
+    text-align: center;
+}
+
+.next {
+    margin-top: -15px;
+    text-align: right;
+    position: relative;
+}
+
+.icon-next, .icon-left {
+    cursor: pointer;
+}
+
+.firma {
+    margin-top: 65px;
+    padding-top: 12px;
+    text-align: right;
+    font-size: 0.8rem;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.firma-imagen {
+    max-width: 80px;
+    height: auto;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.firma-texto {
+    display: block;
+    margin-top: -30px;
+    text-align: right;
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+}
+
+.fecha-texto {
+    display: block;
+    margin-top: 30px;
+    text-align: right;
+    position: absolute;
+    bottom: 0px;
+    right: 35px;
+}
