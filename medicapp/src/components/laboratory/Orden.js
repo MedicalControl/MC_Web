@@ -53,16 +53,7 @@ const Orden = ({ onClose, ontipoExamenChange }) => {
                         <input id="cedula" placeholder="001-0902005-1003N"/>
                     </div>
 
-                    <div className="form-group">
-                        <label for="tipo">Tipo de examen: </label>
-                        <select id="tipo" value={tipoExamen} onChange={handleTipoExamenChange}>
-                            <option value="ninguno">Ninguno</option>
-                            <option value="sangre">Sangre</option>
-                            <option value="orina">Orina</option>
-
-                        </select>
-
-                    </div>
+                    
 
                     <div className="form-group">
                         <label for="detalles">Detalles: </label>
