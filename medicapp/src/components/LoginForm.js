@@ -21,9 +21,6 @@ const LoginForm = () => {
                 </div>
                 <SubmitButton />
 
-                <div className="signup-link">
-                    ¿Todavía no tienes una cuenta? <a href="/#">Crea una ahora</a>
-                </div>
             </form>
         </div>
     )

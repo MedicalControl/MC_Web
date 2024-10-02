@@ -1,0 +1,129 @@
+.container-agenda {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #F4F4F4; /* Ajusta el color según sea necesario */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-agenda {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Evita el salto de línea */
+}
+
+.heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-right: 4px; /* Añade espacio entre los elementos */
+}
+
+.highlight {
+  color: #14b8a6; /* Color teal */
+  font-weight: 600;
+  margin-left: 4px; /* Añade espacio alrededor del nombre */
+}
+
+.nav-button {
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: black;
+}
+
+.title-date {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px; /* Alinea el texto con el icono */
+  margin: 0 8px; /* Añade margen a los lados para espaciado */
+}
+
+.view-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.view-button {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: pointer;
+}
+
+.view-button.active {
+  background-color: #38b2ac;
+  color: white;
+}
+
+.agenda-container {
+  margin: 0 auto;
+  padding: 16px;
+  background-color: white; /* Ajusta el color según sea necesario */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  gap: 8px;
+}
+
+.empty-cell {
+  grid-column: span 1;
+}
+
+.day-header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.time-slot {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.blue-bg {
+  background-color: #ebf8ff;
+}
+
+.red-bg {
+  background-color: #fbd5d5;
+}
+
+.appointment-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.appointment-code {
+  font-size: 12px;
+}

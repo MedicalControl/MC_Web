@@ -1,0 +1,72 @@
+.container-2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .back-btn {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .view-options {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .day-btn, .week-btn, .month-btn, .year-btn {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+  }
+  
+  .day-label {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .schedule-item {
+    border-top: 1px solid #d1d5db;
+    padding: 8px;
+  }
+  
+  .name {
+    color: #007bff;
+  }
+  
+  .name.red {
+    color: #ef4444;
+  }
+  
+  .id {
+    color: #6b7280;
+  }
+  
