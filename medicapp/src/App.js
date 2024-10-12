@@ -11,6 +11,7 @@ import Agenda2 from './components/calendar/Agenda2';
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
+import Enfermeria_form from './components/Enfermeria/Enfermeria_form';
 
 // con este componente muestra el SideBar y Header mientras no este en la ruta /login
 function Layout({children}) {
@@ -49,6 +50,7 @@ function App() {
       <Layout> 
         <Routes>
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/enfermeria" element={<Enfermeria_form />} />
           <Route path="/" element={<Table />} />
           <Route path="/laboratorio" element={<LabTable />} />
           <Route path="/agenda" element={<Agenda />} />

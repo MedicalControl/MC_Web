@@ -3,8 +3,8 @@ import './SubmitButton.css'
 
 const SubmitButton = () => {
     return (
-        <div>
-            <button type="submit">Iniciar sesion</button>
+        <div  className="Container-submit">
+            <button type="submit" className="Submit-login">Entrar</button>
         </div>
     );
 }
