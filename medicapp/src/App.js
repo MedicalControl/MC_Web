@@ -8,6 +8,8 @@ import Table from './components/search/Table';
 import Agenda from './components/calendar/Agenda';
 import Agenda2 from './components/calendar/Agenda2';
 import Cita from './components/record/Cita';
+import HIdentificacion from './components/record/HIdentificacion';
+import Test from './components/record/Test';
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
@@ -45,6 +47,10 @@ function App() {
       document.title = 'Agenda';
     } else if (location.pathname === '/cita') {
       document.title = 'Cita';
+    } else if (location.pathname === '/identificacion'){
+      document.title = 'Identificación';
+    } else if (location.pathname === '/test') {
+      document.title = 'Test';
     }
   }, [location]);
   return (
@@ -56,7 +62,8 @@ function App() {
           <Route path="/agenda" element={<Agenda />} />
           <Route path="/agenda2" element={<Agenda2 />} /> 
           <Route path="/cita" element={<Cita />} />
-
+          <Route path='/identificacion' element={<HIdentificacion />}/>
+          <Route path='/test' element={<Test />}/>
         </Routes>
       </Layout>
   );
