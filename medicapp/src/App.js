@@ -7,7 +7,7 @@ import Header from './components/search/Header';
 import Table from './components/search/Table';
 import Agenda from './components/calendar/Agenda';
 import Agenda2 from './components/calendar/Agenda2';
-
+import Cita from './components/record/Cita';
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
@@ -43,6 +43,8 @@ function App() {
       document.title = 'Laboratorio';
     } else if (location.pathname === '/agenda') {
       document.title = 'Agenda';
+    } else if (location.pathname === '/cita') {
+      document.title = 'Cita';
     }
   }, [location]);
   return (
@@ -53,6 +55,7 @@ function App() {
           <Route path="/laboratorio" element={<LabTable />} />
           <Route path="/agenda" element={<Agenda />} />
           <Route path="/agenda2" element={<Agenda2 />} /> 
+          <Route path="/cita" element={<Cita />} />
 
         </Routes>
       </Layout>
