@@ -4,7 +4,7 @@ import './SubmitButton.css'
 const SubmitButton = () => {
     return (
         <div>
-            <button type="submit">Iniciar sesion</button>
+            <button className="btn-login" type="submit">Iniciar sesion</button>
         </div>
     );
 }

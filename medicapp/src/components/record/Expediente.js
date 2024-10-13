@@ -10,21 +10,21 @@ export default function Expediente() {
   }
 
   return (
-    <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px' }}>
-      <div className={`card ${isHidden ? 'hidden' : ''}`} style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
-        <div className="card-header" style={{ backgroundColor: '#38b2ac', color: 'white', padding: '16px' }}>
-          <div className="flex" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Expediente del Paciente</h2>
+    <div className="container container-expediente" style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px' }}>
+      <div className={`card card-expediente ${isHidden ? 'hidden' : ''}`} style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+        <div className="card-header-expediente" >
+          <div className="flex flex-container-expediente">
+            <h2 className="title-expediente" >Expediente del Paciente</h2>
             <button 
-              className="btn-outline" 
-              style={{ border: '1px solid white', padding: '4px 8px', cursor: 'pointer', }} 
+              className="btn-outline btn-expediente" 
               onClick={() => setIsHidden(!isHidden)}
             >
               {isHidden ? 'Mostrar Expediente' : 'Ocultar Expediente'}
             </button>
           </div>
         </div>
-        <div className={`card-content ${isHidden ? 'hidden' : ''}`} style={{ padding: '16px' }}>
+        
+        <div className={`card-content-expediente ${isHidden ? 'hidden' : ''}`}>
           <div className="tabs" style={{ width: '100%' }}>
             <div className="tabs-list" >
                 {['Notas de enfermeria', 'Historia Clinica', 'Resultados de Laboratorio', 'Recetas Medicas'].map((tab, index) => (
@@ -57,14 +57,14 @@ export default function Expediente() {
                   ))}
                 </tbody>
               </table>
-              <div style={{ marginTop: '16px' }}>
+              <div style={{ marginTop: '20px' }}>
                 <button 
-                  className="btn" 
-                  style={{ width: '100%', backgroundColor: '#38b2ac', color: 'white', padding: '12px 16px', cursor: 'pointer' }}
+                  className="btn-save-expediente" 
                 >
                   Guardar Notas Enfermería
                 </button>
               </div>
+              
             </div>
             
           </div>
