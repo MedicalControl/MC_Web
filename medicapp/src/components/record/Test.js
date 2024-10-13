@@ -13,7 +13,7 @@ const Test = () => {
         <h2>Nombres y apellidos completos:</h2>
         <p class="profile-info-test">Yasser José Darce Mairena</p>
 
-        <div class="grid-container">
+        <div class="grid-container-test">
           <div>
             <label>No. de cédula:</label>
             <p class="profile-info-test">001-090205-1003N</p>
