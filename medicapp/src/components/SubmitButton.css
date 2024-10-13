@@ -1,13 +1,38 @@
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #00c6c6; /* Color de botón */
+.Submit-login {
+    width: 360px;
+    padding: 13px;
+    background-color: #2AB9B7; /* Color de botón */
     color: white;
     font-size: 18px;
     border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    border-radius: 13px;
+    cursor: pointer;  
+    font-weight: 500;
+}
+.Submit-login:hover {
+    background-color: rgb(11, 182, 182)
+}
+
+.Container-submit{
     display: flex;
+    justify-content: center;
+}
+.Submit-login {
+    width: 360px;
+    padding: 13px;
+    background-color: #2AB9B7; /* Color de botón */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;  
+    font-weight: 500;
+}
+.Submit-login:hover {
+    background-color: rgb(11, 182, 182)
+}
+
+.Container-submit{
+    display: flex;
+    justify-content: center;
 }
