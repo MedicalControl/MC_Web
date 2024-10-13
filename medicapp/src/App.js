@@ -10,6 +10,9 @@ import Agenda2 from './components/calendar/Agenda2';
 import Cita from './components/record/Cita';
 import HIdentificacion from './components/record/HIdentificacion';
 import Test from './components/record/Test';
+import Pacientes from './components/pacientes/Pacientes';
+import Expediente from './components/record/Expediente';
+
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
@@ -48,10 +51,16 @@ function App() {
       document.title = 'Agenda';
     } else if (location.pathname === '/cita') {
       document.title = 'Cita';
-    } else if (location.pathname === '/identificacion'){
+    } else if (location.pathname === '/enfermeria') {
+      document.title = 'Enfermeria';
+    } else if (location.pathname === '/identificacion') {
       document.title = 'Identificación';
     } else if (location.pathname === '/test') {
       document.title = 'Test';
+    } else if (location.pathname === '/pacientes') {
+      document.title = 'Pacientes Pendientes';
+    } else if (location.pathname === '/expediente') {
+      document.title = 'Expediente';
     }
   }, [location]);
   return (
@@ -66,6 +75,9 @@ function App() {
           <Route path="/cita" element={<Cita />} />
           <Route path='/identificacion' element={<HIdentificacion />}/>
           <Route path='/test' element={<Test />}/>
+          <Route path='/pacientes' element={<Pacientes />}/>
+          <Route path='/expediente' element={<Expediente />}/>
+
         </Routes>
       </Layout>
   );
