@@ -11,6 +11,7 @@ import Cita from './components/record/Cita';
 import HIdentificacion from './components/record/HIdentificacion';
 import Test from './components/record/Test';
 import Pacientes from './components/pacientes/Pacientes';
+import Expediente from './components/record/Expediente';
 
 
 import './App.css';
@@ -57,6 +58,8 @@ function App() {
       document.title = 'Test';
     } else if (location.pathname === '/pacientes') {
       document.title = 'Pacientes Pendientes';
+    } else if (location.pathname === '/expediente') {
+      document.title = 'Expediente';
     }
   }, [location]);
   return (
@@ -71,6 +74,7 @@ function App() {
           <Route path='/identificacion' element={<HIdentificacion />}/>
           <Route path='/test' element={<Test />}/>
           <Route path='/pacientes' element={<Pacientes />}/>
+          <Route path='/expediente' element={<Expediente />}/>
 
         </Routes>
       </Layout>

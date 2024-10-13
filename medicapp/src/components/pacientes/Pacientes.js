@@ -1,5 +1,6 @@
 import React from "react";
 import './Pacientes.css';
+import { Link } from "react-router-dom";
 
 const Pacientes = () => {
     return (
@@ -43,7 +44,15 @@ const Pacientes = () => {
                             <td>20</td>
                             <td>M</td>
                             <td>9:10 am</td>
-                            <td><span className="status status-atender">Atender</span></td>
+                            <td>
+                                <span className="status status-atender">
+                                    <Link 
+                                    to="/expediente"
+                                    style={{ textDecoration: 'none', color: 'white' }}>               
+                                        Atender
+                                    </Link>
+                                </span>
+                            </td>
                         </tr>
 
                         {/* No2 */}

@@ -1,0 +1,59 @@
+.tabs-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.small-tab {
+    font-size: 0.75rem; /* Ajusta el tamaño de la fuente */
+    padding: 6px 12px; /* Reduce el padding */
+    cursor: pointer;
+    background-color: white;
+    text-align: center;
+    color: black;
+    transition: box-shadow 0.3s ease; /* Añade una transición suave */
+    border-radius: 4px;
+    white-space: nowrap;
+    width: auto
+  }
+
+  .small-tab:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3); /* Sombra hacia abajo */
+  }
+
+  .small-tab.active {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3); /* Efecto de sombra en la tab activa */
+  }
+
+
+.tabs-content-expediente {
+    margin-top: 16px;
+}
+
+.table-expediente {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd
+}
+
+.th-expediente {
+    background-color: #f9f9f9; /* Color de fondo para el encabezado */
+    padding: 8px; /* Espaciado dentro de las celdas del encabezado */
+    text-align: center; /* Centrar texto en el encabezado */
+    border: 1px solid #ddd;
+}
+
+.td-expediente {
+    padding: 18px; /* Espaciado dentro de las celdas */
+    text-align: left; /* Alineación del texto en celdas de datos */
+    border: 1px solid #ddd;
+    min-height: 40px;
+
+}
+
+
+.th-expediente {
+    background-color: #f9f9f9; /* Color de fondo para el encabezado */
+}
