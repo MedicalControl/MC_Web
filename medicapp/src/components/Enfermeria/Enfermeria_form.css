@@ -4,15 +4,20 @@
   margin: 0;  /* Elimina márgenes de h2 y h4 */
 }
 
+.header-top{
+  display: flex;
+  justify-content: center;
+}
+
+
 /* Añadir fondo y aplicar padding */
-.header-form {
+.header-form-enfermeria {
   background-color: #2AB9B7; /* El color que prefieras */
   padding: 10px;  /* Ajusta el espacio dentro del contenedor */
   color: white;   /* Asegúrate de que el texto sea visible */
   border-radius: 4px;  /* Opcional: bordes redondeados */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Opcional: sombra */
-  margin-left: 222px;
-  width: 720px;
+  width: 702px;
 }
 
 .content {
@@ -149,4 +154,16 @@
   color: #1F1F1F;
   font-weight: 600;
   }
+  @media (max-width: 768px) {
+ 
   
+     .form-group1,.form-group2,.form-group3,.form-group4,.form-group5, .form-group6, .form-group7 input {
+      width: 100%;
+    }
+    .content{
+      width: 100%;
+    }
+    .input_nombre_establecimiento, .input_expediente, .input_nombre, .input_cedula, .input_inss, .input_servicio, .input_cama{
+      width: 100%;
+    }
+  }

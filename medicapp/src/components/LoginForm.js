@@ -16,38 +16,36 @@ const LoginForm = () => {
     navigate("/"); 
   };
   return (
-    <>
-      <div className="Container">
+    <>  
+    <div className="login-page" >
+      <div className="ContainerLogin">
         <div className="login-container">
-          <div className="header-container">
+          <div className="header-container-login">
             <Logo />
-            <div className="text-container">
-              <div className="Title">Medical Control</div>
-              <h3 className="Subtitle">Gestiona tu salud, gestiona tu vida</h3>
-            </div>
           </div>
-          <form className="form-container" onSubmit={handleSubmit}>
-            <div className="input-field">
+          <form className="form-container-login" onSubmit={handleSubmit}>
+            <div className="input-field-login">
               <EmailInput />
             </div>
-            <div className="input-field2">
+            <div className="input-field2-login">
               <PaswordInput />
             </div>
             <SubmitButton />
           </form>
-          <hr style={{ border: 'none', height: '1px', backgroundColor: '#545454', width: '348px', marginTop: '29px' }} />
-          <div className="contraseña-olvidada">
+          <hr style={{ border: 'none', height: '1px', backgroundColor: '#545454', width: '330px', marginTop: '29px', marginLeft: '66px' , display: 'flex', justifyContent: 'center' }} />
+          <div className="contraseña-olvidada-login">
             ¿Has olvidado tu contraseña?
           </div>
         </div>
       </div>
     
-      <div className="footer-links">
+      <div className="footer-links-login">
         <a href="/faq">Preguntas frecuentes</a> 
         <a href="/terms">Términos de uso</a> 
         <a href="/help-center">Centro de ayuda</a> 
         <a href="/privacy">Privacidad</a>
       </div>
+    </div>
     </>
   );
 };

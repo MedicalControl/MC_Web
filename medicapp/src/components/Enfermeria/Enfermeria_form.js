@@ -29,13 +29,15 @@ const Enfermeria_form = () => {
 
   return (
     <div className="container">
-      <div className="header-form">
+      <div className="header-top" >
+      <div className="header-form-enfermeria">
         <div>
           <h2>REGISTRAR NUEVO PACIENTE</h2>
         </div>
         <div style={{ marginTop: "10px" }}>
           <h4>NOTAS DE ENFERMERÍA</h4>
         </div>
+      </div>
       </div>
       <div className="content" >
         <form onSubmit={handleSubmit}>
