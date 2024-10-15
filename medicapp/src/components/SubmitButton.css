@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 .Submit-login {
     width: 360px;
     padding: 13px;
     background-color: #2AB9B7; /* Color de botón */
-=======
-.btn-login {
-    width: 100%;
-    padding: 15px;
-    background-color: #00c6c6; /* Color de botón */
->>>>>>> CriCri
     color: white;
     font-size: 18px;
     border: none;
@@ -25,7 +18,7 @@
     justify-content: center;
 }
 .Submit-login {
-    width: 360px;
+    width: 330px;
     padding: 13px;
     background-color: #2AB9B7; /* Color de botón */
     color: white;
