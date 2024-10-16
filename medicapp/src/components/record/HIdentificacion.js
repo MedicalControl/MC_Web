@@ -21,7 +21,7 @@ const HIdentificacion = () => {
             <form className="form-identificacion">
                 <div className="form-row full-row">
                     <div className="profile-identificacion">
-                    <img src="elWebo.jpg" alt="Profile" className="img-profile"/>
+                        <img src="elWebo.jpg" alt="Profile" className="img-profile"/>
                     </div>
                     <div className="input-container">
                     <input type="text" name="nombres" placeholder="Nombres y apellidos" className="input-identificacion"/>
