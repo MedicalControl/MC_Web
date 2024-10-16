@@ -84,7 +84,7 @@ const Agenda = () => {
                 </div>
 
 
-                <div className="grid-container">
+                <div className="grid-container-agenda">
                     <div className="empty-cell"></div>
                     {weekDates.map((date, index) => (
                     <div key={index} className="day-header">

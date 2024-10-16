@@ -86,7 +86,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.grid-container {
+.grid-container-agenda {
   display: grid;
   grid-template-columns: 100px repeat(7, 1fr);
   gap: 8px;
