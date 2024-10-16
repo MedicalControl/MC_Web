@@ -39,24 +39,24 @@ const Orden = ({ onClose, ontipoExamenChange }) => {
             <div className="card-content">
                 <form>
                     <div className="form-group">
-                        <label for="unidad">Unidad de Salud:</label>
+                        <label className="label-orden" for="unidad">Unidad de Salud:</label>
                         <input id="unidad" placeholder="Unidad de Salud: 'Cuidado y Prevención'"/>
                     </div>
 
                     <div className="form-group">
-                        <label for="nombre">Nombre y apellidos del paciente: </label>
+                        <label for="nombre"className="label-orden" >Nombre y apellidos del paciente: </label>
                         <input id="nombre" placeholder="Yasser José Darce Mairena"/>
                     </div>
 
                     <div className="form-group">
-                        <label for="fecha">Cédula: </label>
+                        <label for="fecha"className="label-orden" >Cédula: </label>
                         <input id="cedula" placeholder="001-0902005-1003N"/>
                     </div>
 
                     
 
                     <div className="form-group">
-                        <label for="detalles">Detalles: </label>
+                        <label for="detalles"className="label-orden" >Detalles: </label>
                         <textarea id="detalles" placeholder="Evaluar niveles de hemoglobina y glóbulos rojos en un paciente 
                         con síntomas de fatiga crónica"></textarea>
                     </div>

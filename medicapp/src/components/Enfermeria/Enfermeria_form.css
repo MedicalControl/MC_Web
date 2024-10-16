@@ -20,7 +20,7 @@
   width: 720px;
 }
 
-.content {
+.content-enfermeria {
     width: 700px;
     margin: auto;
     background-color: #ffffff;
@@ -136,13 +136,13 @@
   }
   
   
-  table {
+  .table-enfermeria {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
   }
   
-  th, td {
+  .th-enfermeria, .td-enfermeria {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
@@ -150,20 +150,20 @@
     overflow-wrap: break-word; /* Garantiza que el texto no se desborde */
     max-width: 300px; /* Ajusta según tu diseño */
   }
-  th{
+  .th-enfermeria  {
   color: #1F1F1F;
   font-weight: 600;
   }
-  @media (max-width: 768px) {
- 
-  
+  @media (max-width: 780px) {
      .form-group1,.form-group2,.form-group3,.form-group4,.form-group5, .form-group6, .form-group7 input {
       width: 100%;
     }
-    .content{
+    .content-enfermeria{
       width: 85%;
     }
     .input_nombre_establecimiento, .input_expediente, .input_nombre, .input_cedula, .input_inss, .input_servicio, .input_cama{
-      width: 80%;
+      width: 70%;
+      margin-right: 0px;
+      margin-left: 0;
     }
   }

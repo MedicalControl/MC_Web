@@ -39,7 +39,7 @@ const Enfermeria_form = () => {
         </div>
       </div>
       </div>
-      <div className="content" >
+      <div className="content-enfermeria" >
         <form onSubmit={handleSubmit}>
           <div style={{ display: "flex" }}>
             <div className="form-group1">
@@ -195,19 +195,19 @@ const Enfermeria_form = () => {
           </div>
         </form>
 
-        <table>
+        <table className="table-enfermeria" >
           <thead>
             <tr>
-              <th>Fecha</th>
-              <th>Hora</th>
-              <th>Observaciones y Cuidados de Enfermería</th>
+              <th className="th-enfermeria" >Fecha</th>
+              <th className="th-enfermeria">Hora</th>
+              <th className="th-enfermeria">Observaciones y Cuidados de Enfermería</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{formData.fecha}</td>
-              <td>{formData.hora}</td>
-              <td>{formData.observacion}</td>
+              <td className="td-enfermeria" >{formData.fecha}</td>
+              <td className="td-enfermeria">{formData.hora}</td>
+              <td className="td-enfermeria">{formData.observacion}</td>
             </tr>
           </tbody>
         </table>

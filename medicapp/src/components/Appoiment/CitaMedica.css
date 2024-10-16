@@ -1,0 +1,110 @@
+.Content-CitaMedica{
+    display: flex;
+    justify-content: center;
+}
+
+.Container-CitaMedica{
+    padding: 10px;  /* Ajusta el espacio dentro del contenedor */
+     /* Asegúrate de que el texto sea visible */
+    border-radius: 4px;  /* Opcional: bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);  /* Opcional: sombra */
+    width: 720px;
+    height: 650px;
+}
+
+.header-CitaMedica{
+    display: flex;
+}
+
+.data-patient{
+    display: flex;
+    margin-left: 30px;
+}
+
+.Container-btnExpediente{
+    margin-top: 50px;
+    margin-left: 290px;
+}
+
+.btn-Expediente{
+    width: 130px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2AB9B7;
+    border: 1px solid #2AB9B7;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-Expediente:hover{
+    background-color: #95e9e7;
+    color: aliceblue;
+    border: 1px solid #95e9e7;
+
+}
+
+.line-header{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.label-CitaMedica{
+    color: #2A3030;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.textArea-CitaMedica{
+    margin-left: 30px;
+    background-color: white;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+    width: 90%;
+}
+
+.btnSubmit-form{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 92%;
+    background-color: #2AB9B7;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .Container-CitaMedica {
+      width: 100%;
+      padding: 10px;
+      height: 100%;
+    }
+  
+    .header-CitaMedica {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .data-patient {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .Container-btnExpediente {
+      margin: 10px 0;
+    }
+  
+    .textArea-CitaMedica,
+    .btnSubmit-form {
+      width: 94%;
+      margin-left: 0;
+    }
+  
+    .label-CitaMedica {
+      margin-left: 0;
+    }
+  }
+
+

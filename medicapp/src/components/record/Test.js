@@ -7,7 +7,7 @@ const Test = () => {
       <img
         class="profile-picture-test"
         src="elWebo.jpg"
-        alt="Profile Picture"
+        alt="Profile"
       />
       <div class="profile-details">
         <h2>Nombres y apellidos completos:</h2>

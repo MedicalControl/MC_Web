@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import LoginForm from './components/LoginForm';
 import {BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import SideBar from './components/search/SideBar';
-import Dashboard from './components/search/Dashboard';
 import Header from './components/search/Header';
 import Table from './components/search/Table';
 import Agenda from './components/calendar/Agenda';
@@ -12,11 +11,11 @@ import HIdentificacion from './components/record/HIdentificacion';
 import Test from './components/record/Test';
 import Pacientes from './components/pacientes/Pacientes';
 import Expediente from './components/record/Expediente';
-
+import CitaMedica from './components/Appoiment/CitaMedica';
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
-import Enfermeria_form from './components/Enfermeria/Enfermeria_form';
+import EnfermeriaForm from './components/Enfermeria/Enfermeria_form';
 
 // con este componente muestra el SideBar y Header mientras no este en la ruta /login
 function Layout({children}) {
@@ -61,13 +60,15 @@ function App() {
       document.title = 'Pacientes Pendientes';
     } else if (location.pathname === '/expediente') {
       document.title = 'Expediente';
+    }else if (location.pathname === '/CitaMedica') {
+      document.title = 'CitaMedica';
     }
   }, [location]);
   return (
       <Layout> 
         <Routes>
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/enfermeria" element={<Enfermeria_form />} />
+          <Route path="/enfermeria" element={<EnfermeriaForm />} />
           <Route path="/" element={<Table />} />
           <Route path="/laboratorio" element={<LabTable />} />
           <Route path="/agenda" element={<Agenda />} />
@@ -76,6 +77,7 @@ function App() {
           <Route path='/identificacion' element={<HIdentificacion />}/>
           <Route path='/test' element={<Test />}/>
           <Route path='/pacientes' element={<Pacientes />}/>
+          <Route path='/CitaMedica' element={<CitaMedica />}/>
           <Route path='/expediente' element={<Expediente />}/>
 
         </Routes>
