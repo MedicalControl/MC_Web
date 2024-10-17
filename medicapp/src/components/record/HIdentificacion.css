@@ -107,14 +107,19 @@
   display: flex;
   align-items: center;
   gap: 10px; /* Espacio entre los elementos de radio */
-}
-
-.radio-group span {
-  margin-right: 10px;
+  padding-top: 10px; /* Espaciado superior */
+  padding-bottom: 10px; /* Espaciado inferior */
 }
 
 .radio-group label {
-  margin-right: 10px;
+  display: flex;
+  align-items: center; /* Alinea el radio y el texto del label en el centro */
+  margin-right: 10px; /* Espacio entre cada opción de radio */
+}
+
+.radio-group span {
+  white-space: nowrap; /* Evita que el texto "Sexo:" se divida en varias líneas */
+  margin-right: 10px; /* Espacio entre el span y los inputs de radio */
 }
 
 .section {
@@ -279,4 +284,15 @@
     flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
     min-width: 0; /* Permite que se ajusten completamente */
   }
+}
+
+/* Estilos para la flecha derecha */
+.next-identificacion {
+  margin-top: 10px;
+  text-align: right;
+  position: relative;
+}
+
+.icon-next-identificacion, .icon-left-identificacion {
+  cursor: pointer;
 }
