@@ -1,136 +1,214 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-
-  
-  .container-identificacion {
-    max-width: 960px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .header-identificacion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .header-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo,
-  .caduceo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .title-identificacion {
-    margin-left: 10px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .expediente {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  
-  .expediente span {
-    background-color: #38b2ac;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .form-identificacion {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #d1d1d1;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  @media (min-width: 768px) {
-    .form-identificacion {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  .full-row {
-    grid-column: span 2;
-  }
-  
-  
-  
-  .radio-group {
-    display: flex;
-    align-items: center;
-  }
-  .radio-group span {
-    margin-right: 10px;
-  }
-  
-  .radio-group label {
-    margin-right: 10px;
-  }
-  
-  
-  
-  .section {
-    margin-top: 20px;
-  }
-  
-  .section h3 {
-    margin-bottom: 10px;
-  }
-  
-  .checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-/* Css para la parte del perfil */
-.form-profile {
-    display: flex;
-    align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.profile-identificacion img {
-    width: 120px;
-    height: 160px;
-    background-color: #e2e8f0;
-    margin-right: 20px;
+.container-identificacion {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-identificacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo,
+.caduceo {
+  width: 40px;
+  height: 40px;
+}
+
+.title-identificacion {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.expediente {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.expediente span {
+  background-color: #38b2ac;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.form-identificacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-identificacion .input-identificacion {
+  flex: 1 1 calc(48% - 10px); /* Mantiene el ancho en pantallas grandes */
+  min-width: 300px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .form-identificacion .input-identificacion {
+      flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+      min-width: 0; /* Permite que se ajusten completamente */
+  }
+}
+
+.full-row {
+  width: 100%; /* Asegura que el campo "Dirección de residencia" ocupe toda la fila */
+  display: block; /* Se asegura que sea un bloque y esté debajo */
+  margin-top: 20px; /* Añade espacio debajo del campo */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  border-radius: 8px;
+  padding: 16px;
+  align-items: flex-start; /* Alinea los elementos al principio */
+  background-color: #f8f8f8;
+}
+
+
+/* Agrupando los radios */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos de radio */
+}
+
+.radio-group span {
+  margin-right: 10px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Css para la parte del perfil */
+.form-profile {
+  display: flex;
+  align-items: center;
+}
+
+.img-profile {
+  width: 120px;
+  height: 160px;
+  background-color: #e2e8f0;
+}
+
+
+/* Contenedor de cada grupo de inputs */
+.form-row-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los inputs */
+  width: 100%; /* Asegura que el grupo ocupe el ancho completo */
+}
+
+/* Ajustes para los inputs dentro de los grupos */
+.form-row-group .input-identificacion {
+  flex: 1 1 calc(32% - 10px); /* Ocupa el 32% del ancho para 3 inputs por fila */
+  min-width: 150px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .form-row-group .input-identificacion {
+      flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+      min-width: 0; /* Permite que se ajusten completamente */
+  }
 }
 
 .profile-identificacion {
-    grid-column: 1 / span 1;
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-container {
-    grid-column: 2 / span 1;
-  }
-  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .input-identificacion {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.parents-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.parents-row .input-identificacion {
+  flex: 1 1 calc(50% - 10px); /* Cada input ocupará el 50% del contenedor, menos el espacio del gap */
+  min-width: 300px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .parents-row .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* No hay un ancho mínimo, permite que se ajusten */
   }
-  .contact-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+}
+
+.contact-row .input-identificacion {
+  flex: 1 1 calc(50% - 10px); /* Hace que cada input ocupe el 50% del contenedor, menos el espacio del gap */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .contact-row .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* Permite que se ajusten completamente */
   }
+}

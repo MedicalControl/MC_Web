@@ -24,25 +24,33 @@ const HIdentificacion = () => {
                         <img src="elWebo.jpg" alt="Profile" className="img-profile"/>
                     </div>
                     <div className="input-container">
-                    <input type="text" name="nombres" placeholder="Nombres y apellidos" className="input-identificacion"/>
-                    <input type="text" name="cedula" placeholder="No. de cédula" className="input-identificacion"/>
-                    <input type="text" name="edad" placeholder="Edad" className="input-identificacion"/>
+                        <div className="form-row-group">
+                            <input type="text" name="nombres" placeholder="Nombres y apellidos" className="input-identificacion"/>
+                            <input type="text" name="cedula" placeholder="No. de cédula" className="input-identificacion"/>
+                            <input type="text" name="edad" placeholder="Edad" className="input-identificacion"/>
+                            <div className="radio-group">
+                                <span>Sexo:</span>
+                                <label>
+                                    <input type="radio" name="sexo" value="M"/> M
+                                </label>
+                                <label>
+                                    <input type="radio" name="sexo" value="F"/> F
+                                </label>
+                            </div>
+                        </div>
 
-                    <div className="radio-group">
-                        <span>Sexo:</span>
-                        <label>
-                        <input type="radio" name="sexo" value="M"/> M
-                        </label>
-                        <label>
-                        <input type="radio" name="sexo" value="F"/> F
-                        </label>
-                    </div>
-                    <input type="text" name="estadoCivil" placeholder="Estado Civil" className="input-identificacion"/>
-                    <input type="text" name="ocupacion" placeholder="Ocupación u oficio" className="input-identificacion"/>
-                    <input type="text" name="escolaridad" placeholder="Escolaridad" className="input-identificacion"/>
-                    <input type="text" name="religion" placeholder="Religión" className="input-identificacion"/>
+                        <div className="form-row-group">
+                            <input type="text" name="estadoCivil" placeholder="Estado Civil" className="input-identificacion"/>
+                            <input type="text" name="ocupacion" placeholder="Ocupación u oficio" className="input-identificacion"/>
+                        </div>
+
+                        <div className="form-row-group">
+                            <input type="text" name="escolaridad" placeholder="Escolaridad" className="input-identificacion"/>
+                            <input type="text" name="religion" placeholder="Religión" className="input-identificacion"/>
+                        </div>
                     </div>
                 </div>
+
 
 
                 <input type="text" name="direccion" placeholder="Dirección de residencia" className="input-identificacion full-row"/>
@@ -52,9 +60,12 @@ const HIdentificacion = () => {
                     <input type="text" name="telefono" placeholder="Teléfono" className="input-identificacion"/>
                     <input type="text" name="celular" placeholder="Celular" className="input-identificacion"/>
                 </div>
-
-                <input type="text" name="nombreMadre" placeholder="Nombre de la madre" className="input-identificacion"/>
-                <input type="text" name="nombrePadre" placeholder="Nombre del padre" className="input-identificacion"/>
+                
+                <div className="parents-row">
+                    <input type="text" name="nombreMadre" placeholder="Nombre de la madre" className="input-identificacion"/>
+                
+                    <input type="text" name="nombrePadre" placeholder="Nombre del padre" className="input-identificacion"/>
+                </div>                
 
                 <div className="section full-row">
                     <h3>Enfermedades Infecto - Contagiosas:</h3>
