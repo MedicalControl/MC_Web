@@ -352,42 +352,68 @@ const HIdentificacion = () => {
       {currentContent === "otroContenido" && (
         <>
           <form className="form-antecedentes">
-            <h2>Nuevo Contenido</h2>
-            <p>Aquí va la nueva información que deseas mostrar.</p>
+            <h3>Antecedentes personales no patológicos</h3>
 
+            <div className="immunizations">
+              <label>
+                Inmunizaciones completas (confirmar con tarjeta de vacuna si es
+                posible):
+              </label>
+
+              <div className="immunization-checkbox">
+                <input
+                  type="checkbox"
+                  id="immunization-yes"
+                  name="immunization"
+                  value="yes"
+                />
+                <label for="immunization-yes">Sí</label>
+                <input
+                  type="checkbox"
+                  id="immunization-no"
+                  name="immunization"
+                  value="no"
+                />
+                <label for="immunization-no">No</label>
+
+                <input
+                  className="input-identificacion"
+                />
+              </div>
+            </div>
           </form>
 
           {/* Al darle click al svg lo manda al anterior contenido */}
           <div className="before-identificacion">
-              <svg
-                className="icon-left-identificacion"
-                onClick={handleBackClick}
-                width="40px"
-                height="40px"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                transform="rotate(180)"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <svg
+              className="icon-left-identificacion"
+              onClick={handleBackClick}
+              width="40px"
+              height="40px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              transform="rotate(180)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
 
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z"
-                    fill="#000000"
-                  />{" "}
-                </g>
-              </svg>
-            </div>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z"
+                  fill="#000000"
+                />{" "}
+              </g>
+            </svg>
+          </div>
         </>
       )}
     </div>

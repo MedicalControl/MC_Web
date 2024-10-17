@@ -307,11 +307,28 @@
 /* Aca esta el css del otro contenido de la card */
 .form-antecedentes {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Cambia a columna para alinear verticalmente */
   gap: 20px;
   background-color: #f8f8f8;
   border: 1px solid #d1d1d1;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Seccion de inmunizaciones */
+.immunizations {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  gap: 10px; /* Espacio entre el label y los checkboxes */
+}
+
+.immunization-checkbox {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  gap: 10px; /* Espacio entre los checkboxes y el label */
+}
+
+.immunization-checkbox input {
+  margin-right: 5px; /* Espacio a la derecha del checkbox */
 }
