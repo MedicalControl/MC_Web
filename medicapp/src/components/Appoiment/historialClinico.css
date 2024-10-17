@@ -1,0 +1,95 @@
+.container-historial{
+    border: 1px solid #c5c5c5;
+    overflow-y: auto;
+    max-height: 400px;
+    height: 1000px;
+    border-radius: 9px;
+}
+
+
+.btn-hidentificacion-h{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto suave para hover */
+    width: 160px;
+  }
+
+.btn-historial-h{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: black;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); /* Disminuye la sombra */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto suave para hover */
+    margin-left: 40px;
+    width: 120px;
+}
+
+  .btn-resultados:hover, .btn-hidentificacion-h:hover, .btn-historial-h:hover{
+    background-color: #c5c5c5;
+  }
+
+  .header-title{
+    font-weight: 600;
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  .box-cita{
+    width: 95%;
+    height: 22%;
+    margin-left: 15px;
+    border: 1px solid #B3B3B3;
+    background-color: #e2e2e2;
+    border-radius: 7px;
+  }
+
+  .box-cita:hover{
+    background-color: rgba(179, 179, 179, 0.616)
+  }
+
+  .tabla-superpuesta {
+    max-height:  50%;
+    position: fixed; /* Para que se superponga sobre el contenido */
+    top: 63%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar para centrar */
+    background-color: white; /* Fondo blanco para la tabla */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Asegurarse de que esté por encima de otros elementos */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 100%; /* Ancho máximo para dispositivos móviles */
+    overflow: auto; /* Permitir desplazamiento si es necesario */
+  }
+  
+  .tabla-superpuesta table {
+    width: 92%; /* Para que la tabla ocupe todo el ancho disponible */
+    border-collapse: collapse; /* Eliminar espacios entre celdas */
+    
+}
+  .tabla-superpuesta th, .tabla-superpuesta td {
+    border: 1px solid #ccc; /* Bordes de las celdas */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    font-size: 13px;
+    font-weight: 700;
+
+  }
+  
+  .tabla-superpuesta th {
+    font-size: 13px;
+    background-color: #ffffff; /* Color de fondo para encabezados */
+  }
+  .tabla-superpuesta th input {
+    max-width: 170px;
+    font-size: 13px;
+}
+
+  .table-cita {
+    width: 100px;
+  }
+
