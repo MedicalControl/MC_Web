@@ -10,7 +10,7 @@ const SideBar = () => {
           <img src="/medicallogo2.png" alt="logo" className="menu-logo" />
         </div>
 
-        <span>MENU</span>
+        <span className="menu-title">MENU</span>
 
         {/* Home */}
         <Link to={"/"}>
