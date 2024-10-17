@@ -293,6 +293,25 @@
   position: relative;
 }
 
+.before-identificacion {
+  margin-top: 10px;
+  text-align: left;
+  position: relative;
+}
+
 .icon-next-identificacion, .icon-left-identificacion {
   cursor: pointer;
+}
+
+
+/* Aca esta el css del otro contenido de la card */
+.form-antecedentes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
