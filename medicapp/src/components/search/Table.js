@@ -6,6 +6,10 @@ const Table = () => {
 
     const [appointments, setAppointments] = useState([]);
     const [cantidad , setCantidad] = useState(0);
+    
+    // estos funcionan para hacer busquedas por numero de expedientes
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
+    const [filteredAppointments, setFilteredAppointments] = useState([]); // Estado para las citas filtradas
 
     const fetchAppointments = async () => {
         
@@ -24,6 +28,8 @@ const Table = () => {
             setCantidad(response.data.length);
             setAppointments(response.data);
 
+            setFilteredAppointments(response.data);
+
             appointments.map((appointment) => {
                 console.log(appointment)
             })
@@ -35,6 +41,14 @@ const Table = () => {
             console.error(`El error fue: ${error}`);
         }
     };
+
+    useEffect(() => {
+        const results = appointments.filter(appointment =>
+            appointment.paciente.expediente.length > 0 &&
+            appointment.paciente.expediente[0].nroexpediente.includes(searchTerm)
+        );
+        setFilteredAppointments(results);
+    }, [searchTerm, appointments]); // Se ejecuta cuando searchTerm o appointments cambia
 
     useEffect(() => {
         fetchAppointments();
@@ -50,7 +64,13 @@ const Table = () => {
                 </div>
 
               <div className="search-container">
-                <input type="text" placeholder="Buscar..." className="search-input" />
+                <input type="text" 
+                placeholder="Buscar por no expediente..."
+                value={searchTerm} 
+                className="search-input" 
+                onChange={(e) => setSearchTerm(e.target.value)}
+                
+                />
                 <select className="sort-select">
                     <option>Ordenar por: Más reciente</option>
                     <option>Opción 1</option>
@@ -71,31 +91,32 @@ const Table = () => {
                 <tbody>
                     {/* No1 */}
 
-                    {appointments.length > 0 ? (
-                        appointments.map((appointment, index) => (
+                    {filteredAppointments.length > 0 ? (
+                        filteredAppointments.map((appointment, index) => (
                             <tr key={index}>
                                 <td>{appointment.paciente.nombres}</td>
                                 <td>{appointment.paciente.apellidos}</td>
                                 <td>
                                     {appointment.paciente.expediente.length > 0 ? (
                                         <button className="btn-expediente">
-                                        {appointment.paciente.expediente[0].nroexpediente}
+                                            {appointment.paciente.expediente[0].nroexpediente}
                                         </button>
                                     ) : (
                                         'No disponible'
                                     )}
-                                </td>                           
-                                <td><span className={`status status-${appointment.estado.toLowerCase()}`}>{appointment.estado}</span></td>
-                                
-
-
+                                </td>
+                                <td>
+                                    <span className={`status status-${appointment.estado.toLowerCase()}`}>
+                                        {appointment.estado}
+                                    </span>
+                                </td>
                             </tr>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="6">No hay citas disponibles</td>
+                            <td colSpan="4">No hay registros disponibles</td>
                         </tr>
-                    )}   
+                    )} 
 
                     
 
