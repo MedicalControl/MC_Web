@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './Table.css';
 import { fetchAppointments } from "../../controllers/appointmentController";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { fetchMe } from "../../controllers/meController";
 
 const Table = () => {
     const navigate = useNavigate(); // Inicializa useNavigate
@@ -11,6 +12,8 @@ const Table = () => {
     // Estos funcionan para hacer búsquedas por número de expedientes
     const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
     const [filteredAppointments, setFilteredAppointments] = useState([]); // Estado para las citas filtradas
+
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const getAppointments = async () => {
@@ -24,6 +27,7 @@ const Table = () => {
             }
         };
         getAppointments();
+        fetchMe(setUser);
     }, [navigate]);
 
     useEffect(() => {
@@ -38,7 +42,6 @@ const Table = () => {
         <main className="container">
             <div className="heading-container">
                 <h1 className="heading">Bienvenido</h1>
-                <span className="highlight">Dr. Cristopher</span>
                 <h1 className="heading">¿A quién desea atender?</h1>
             </div>
 

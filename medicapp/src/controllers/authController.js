@@ -2,8 +2,9 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 
+
 export const loginUser = async (email, password, navigate) => {
-  const url = "/api/auth/login_medical";
+  const url = `api/auth/login_medical`;
   try {
     const response = await axios.post(url, {
       correo: email,
