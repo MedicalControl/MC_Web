@@ -12,6 +12,7 @@ import Test from './components/record/Test';
 import Pacientes from './components/pacientes/Pacientes';
 import Expediente from './components/record/Expediente';
 import CitaMedica from './components/Appoiment/CitaMedica';
+import PanelAdmin from './components/Administration/panelAdmin';
 
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
@@ -62,6 +63,8 @@ function App() {
       document.title = 'Expediente';
     }else if (location.pathname === '/CitaMedica') {
       document.title = 'CitaMedica';
+    }else if (location.pathname === '/panelAdmin') {
+      document.title = 'panelAdmin';
     }
   }, [location]);
   return (
@@ -79,6 +82,7 @@ function App() {
           <Route path='/pacientes' element={<Pacientes />}/>
           <Route path='/CitaMedica' element={<CitaMedica />}/>
           <Route path='/expediente' element={<Expediente />}/>
+          <Route path='/panelAdmin' element={<PanelAdmin />}/>
 
         </Routes>
       </Layout>

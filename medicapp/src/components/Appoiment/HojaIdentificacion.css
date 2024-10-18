@@ -21,7 +21,7 @@
   }
   
   .close-button {
-    color: white;
+    background-color: red;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -128,4 +128,8 @@
 .data-identificacion{
     margin-left: 1px;
     width: 590px;
+}
+
+.atrasBtn, .siguienteBtn{
+  background-color: #2AB9B7;
 }

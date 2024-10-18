@@ -1,0 +1,49 @@
+.btn-hidentificacion-lab{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto suave para hover */
+    width: 160px;
+  }
+
+.btn-historial-lab{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto suave para hover */
+    margin-left: 40px;
+    width: 120px;
+}
+
+.btn-resultados-lab{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: black;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); /* Disminuye la sombra */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto suave para hover */
+    margin-left: 40px;
+    width: 180px;
+}
+
+  .btn-resultados-lab:hover, .btn-hidentificacion-lab:hover, .btn-historial-lab:hover{
+    background-color: #c5c5c5;
+  }
+
+  .Container-lab{
+    max-height:  50%;
+    position: fixed; /* Para que se superponga sobre el contenido */
+    top: 63%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar para centrar */
+    background-color: white; /* Fondo blanco para la tabla */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Asegurarse de que esté por encima de otros elementos */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 100%; /* Ancho máximo para dispositivos móviles */
+    overflow: auto; /* Permitir desplazamiento si es necesario */
+  }

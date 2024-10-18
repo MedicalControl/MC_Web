@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./HojaIdentificacion.css"; // Estilos específicos para esta tabla
 import SegundaHoja from "./SegundaHoja.js";
 import HistorialClinico from "./historialClinico.js";
+import ResultadosLabCita from "./resultadosLabCita.js";
 
 export default function HojaIdentificacion({ closeTable }) {
     const [mostrarHistorial, setMostrarHistorial] = useState(false); 
+    const [mostrarResultados, setMostrarResultados] = useState(false); // Nuevo estado
+
     const [mostrarSegundaHoja, setMostrarSegundaHoja] = useState(false); // Estado para controlar la visibilidad de la segunda hoja
 
     const mostrarPrimeraHoja = () => setMostrarSegundaHoja(false); // Volver a la primera hoja
@@ -12,6 +15,12 @@ export default function HojaIdentificacion({ closeTable }) {
 
     const mostrarIdentificacion = () => setMostrarHistorial(true); // Mostrar la segunda hoja
     const mostrarHistorialCli = () => setMostrarHistorial(true); // Mostrar la segunda hoja
+
+
+    const mostrarResultadosLaboratorio = () => {
+      setMostrarResultados(true);
+      setMostrarHistorial(false); // Cerrar historial si está abierto
+    };
   
   return (
     <div className="overlay">
@@ -28,14 +37,16 @@ export default function HojaIdentificacion({ closeTable }) {
             Hoja de identificación
           </button>
           <button className="btn-historial" onClick={mostrarHistorialCli} >Historial clínico</button>
-          <button className="btn-resultados">Resultados de laboratorio</button>
+          <button className="btn-resultados" onClick={mostrarResultadosLaboratorio} >Resultados de laboratorio</button>
         </div>
         {mostrarHistorial && (
                 <HistorialClinico closeTable={closeTable}
                 /> // Cargar la segunda hoja
         )}
         
-
+        {mostrarResultados && (
+          <ResultadosLabCita closeTable={closeTable} />
+        )}
         <div className="container-hidentificacion">
           <div className="header-hidentificacion">
             <img src="medicallogo2.png" alt="Logo" width={120} height={50} />
@@ -69,9 +80,9 @@ export default function HojaIdentificacion({ closeTable }) {
            {/* Mover el botón de cambio de página al final */}
     <div className="boton-cambio-pagina">
       {mostrarSegundaHoja ? (
-        <button onClick={mostrarPrimeraHoja}>Atrás</button>
+        <button onClick={mostrarPrimeraHoja} className="atrasBtn" >Atrás</button>
       ) : (
-        <button onClick={mostrarSegunda}>Siguiente</button>
+        <button onClick={mostrarSegunda} className="siguienteBtn" >Siguiente</button>
       )}
     </div>
       </div>
