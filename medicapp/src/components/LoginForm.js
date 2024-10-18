@@ -6,6 +6,8 @@ import "./LoginForm.css";
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import ReCAPTCHA from "react-google-recaptcha"
+import axios from "axios";
 
 const LoginForm = () => {
   const navigate = useNavigate(); 
@@ -27,12 +29,29 @@ const LoginForm = () => {
     })
   }
 
-  const handleSubmit = (event) => {
+  const alertError  = (error, message) => {
+    Swal.fire({
+      title: error,
+      text: message,
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+
+  const [captchaValue, setCaptchaValue] = useState("");
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault(); 
 
     let isValid = true;
     setEmailError("");
     setPasswordError("");
+
+    console.log(`Email y password: ${email} ${password}`);
 
     if (!email) {
       setEmailError("Por favor, complete el campo de correo electrónico.");
@@ -44,9 +63,46 @@ const LoginForm = () => {
       isValid = false;
     }
 
-    if (isValid) {
-      alertSuccess(); 
+    // esta parte es en el caso de que todo fue exitoso
+    const url = "/api/auth/login_medical";
+    
+    try {
+      const response = await axios.post(url, {
+        correo:email,
+        contrasena:password
+      })
+      //console.log(response.data);
+
+      // guardamos el token de la sesion
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+
+      // guardamos informacion del usuario
+      const data = response.data;
+      console.log(`El correo: ${data.correo}`);
+      localStorage.setItem("user", JSON.stringify(data));
+      
+      // guardamos el correo del usuario
+      localStorage.setItem("email", email);
+
+      alertSuccess();
+    } catch (error) {
+      //console.error(`El error fue: ${error.response}`);
+      // si la password es incorrecta
+      if (error.response === 400) {
+        alertError("Contraseña incorrecta", error.response.data.message);
+      } else if (error.response === 404) { // usuario no encontrado
+        alertError("Usuario no encontrado", error.response.data.message);
+      } else {
+        alertError("Error de servidor", error.response.data.message);
+      }
+      console.error(`El error fue: ${error}`);
     }
+    
+
+    //if (isValid) {
+      //alertSuccess(); 
+    //}
   };
 
   return (
@@ -72,6 +128,14 @@ const LoginForm = () => {
                   error={passwordError}
                 />
               </div>
+
+              {/* 
+              -- esto lo tengo que validar con Node o algo de backend
+              <ReCAPTCHA
+                sitekey="6LfVVmUqAAAAALp65LnDqM_4dL7pu-eImqD-SkmE"
+                onChange={handleCaptchaChange}
+              />
+              */}
               <SubmitButton />
             </form>
             <hr style={{ border: 'none', height: '1px', backgroundColor: '#545454', width: '330px', marginTop: '29px', marginLeft: '66px', display: 'flex', justifyContent: 'center' }} />
