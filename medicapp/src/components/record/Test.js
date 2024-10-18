@@ -1,7 +1,19 @@
 import React from "react";
 import "./Test.css";
+import Swal from "sweetalert2";
+
 
 const Test = () => {
+
+  const showAlert  = () => {
+    Swal.fire({
+      title: 'Cita programada',
+      text: 'Cita programada correctamente',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+
   return (
     <div class="profile-card">
       <img
@@ -46,6 +58,10 @@ const Test = () => {
           <div>
             <label>Religión:</label>
             <p class="profile-info-test">Musulman</p>
+          </div>
+
+          <div>
+            <button onClick={showAlert}>Agendar Cita</button>
           </div>
         </div>
       </div>

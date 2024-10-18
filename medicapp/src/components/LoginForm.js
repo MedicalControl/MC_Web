@@ -5,6 +5,7 @@ import SubmitButton from "./SubmitButton";
 import "./LoginForm.css";
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
   const navigate = useNavigate(); 
@@ -12,6 +13,19 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const alertSuccess  = () => {
+    Swal.fire({
+      title: '¡Bienvenido!',
+      text: 'Sesión iniciada correctamente',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate('/');
+      }
+    })
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault(); 
@@ -31,7 +45,7 @@ const LoginForm = () => {
     }
 
     if (isValid) {
-      navigate("/"); 
+      alertSuccess(); 
     }
   };
 

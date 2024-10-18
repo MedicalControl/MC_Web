@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SideBar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const SideBar = () => {
+  const location = useLocation();
 
   const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const path = location.pathname;
+
+    if (path === "/") {
+      setActiveSection("home");
+    } else if (path === "/agenda") {
+      setActiveSection("agenda");
+    } else if (path === "/laboratorio") {
+      setActiveSection("laboratorio");
+    } else if (path === "/pacientes") {
+      setActiveSection("pacientes");
+    }
+  }, [location.pathname]);
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
