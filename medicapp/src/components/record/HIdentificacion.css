@@ -335,7 +335,7 @@
 
 .habits {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -370,35 +370,384 @@
   }
 }
 
-.activity, .nutrition {
+.activity,
+.nutrition {
   display: flex;
   align-items: center;
   gap: 20px;
   width: 100%; /* Asegura que ambos contenedores ocupen el 100% del ancho y estén en filas separadas */
 }
 
-.activity label, .nutrition label {
+.activity label,
+.nutrition label {
   min-width: 100px;
 }
 
-.activity input, .nutrition input {
+.activity input,
+.nutrition input {
   flex: 1;
   padding: 5px;
 }
 
 /* Responsivo: En pantallas pequeñas */
 @media (max-width: 600px) {
-  .activity, .nutrition {
+  .activity,
+  .nutrition {
     flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     align-items: stretch; /* Alinea el input al ancho completo */
   }
 
-  .activity label, .nutrition label {
+  .activity label,
+  .nutrition label {
     min-width: 100%; /* Asegura que el label ocupe el 100% en pantallas pequeñas */
   }
 
-  .activity input, .nutrition input {
+  .activity input,
+  .nutrition input {
     width: 100%; /* Los inputs también ocuparán el 100% */
   }
 }
 
+/* Aca este es otro contenedor */
+.sustancias-uso {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+
+.tabaco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabaco-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tabaco-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.tabaco-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .tabaco {
+    flex-direction: column; /* Cambia a columna para los elementos de tabaco */
+  }
+
+  .tabaco-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .tabaco-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.tabaco-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabaco-age-info label {
+  min-width: 100px;
+}
+
+.tabaco-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .tabaco-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .tabaco-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .tabaco-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.tabaco-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.tabaco-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.tabaco-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .tabaco-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .tabaco-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .tabaco-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Otra seccion */
+.alcohol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.alcohol-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alcohol-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.alcohol-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .alcohol {
+    flex-direction: column; /* Cambia a columna para los elementos de alcohol */
+  }
+
+  .alcohol-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .alcohol-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.alcohol-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.alcohol-age-info label {
+  min-width: 100px;
+}
+
+.alcohol-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .alcohol-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .alcohol-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .alcohol-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.alcohol-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.alcohol-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.alcohol-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .alcohol-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .alcohol-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .alcohol-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Otra sección */
+
+.drogas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drogas-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.drogas-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.drogas-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .drogas {
+    flex-direction: column; /* Cambia a columna para los elementos de drogas */
+  }
+
+  .drogas-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .drogas-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.drogas-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drogas-age-info label {
+  min-width: 100px;
+}
+
+.drogas-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .drogas-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .drogas-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .drogas-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.drogas-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.drogas-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.drogas-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .drogas-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .drogas-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .drogas-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}

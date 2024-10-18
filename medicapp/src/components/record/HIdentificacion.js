@@ -406,7 +406,99 @@ const HIdentificacion = () => {
 
             </div>
 
-            
+            <div className="sustancias-uso">
+
+                  <div className="tabaco">
+                    <label>Tabaco: </label>
+                    <input type="checkbox" id="tabaco-yes" name="tabaco" value="yes"/>
+                    <label for="tabaco-yes">Sí</label>
+
+                    <input type="checkbox" id="tabaco-no" name="tabaco" value="no"/>
+                    <label for="tabaco-no">No</label>
+
+                    <div className="tabaco-info">
+                      <label>Tipo: </label>
+                      <input type="text" name="tabaco-type" className="input-identificacion"/>
+                      <label>Cantidad y frecuencia: </label>
+                      <input type="text" name="tabaco-quantity" className="input-identificacion"/>
+                    </div>
+
+                    <div className="tabaco-age-info">
+                      <label>Edad de inicio: </label>
+                      <input type="text" name="tabaco-age" className="input-identificacion"/>
+
+                      <label>Edad de abandono (si aplica): </label>
+                      <input type="text" name="tabaco-age-end" className="input-identificacion"/>
+
+                    </div>
+
+                    <div className="tabaco-duration-info">
+                      <label>Duración del habito (en años):</label>
+                      <input type="text" name="tabaco-duration" className="input-identificacion"/>
+                    </div>
+                  </div>
+
+                  <div className="alcohol">
+                    <label>Alcohol: </label>
+                    <input type="checkbox" id="alcohol-yes" name="alcohol" value="yes"/>
+                    <label htmlFor="alcohol-yes">Sí</label>
+
+                    <input type="checkbox" id="alcohol-no" name="alcohol" value="no"/>
+                    <label htmlFor="alcohol-no">No</label>
+
+                    <div className="alcohol-info">
+                      <label>Tipo: </label>
+                      <input type="text" name="alcohol-type" className="input-identificacion"/>
+                      <label>Cantidad y frecuencia: </label>
+                      <input type="text" name="alcohol-quantity" className="input-identificacion"/>
+                    </div>
+
+                    <div className="alcohol-age-info">
+                      <label>Edad de inicio: </label>
+                      <input type="text" name="alcohol-age" className="input-identificacion"/>
+
+                      <label>Edad de abandono (si aplica): </label>
+                      <input type="text" name="alcohol-age-end" className="input-identificacion"/>
+                    </div>
+
+                    <div className="alcohol-duration-info">
+                      <label>Duración del hábito (en años):</label>
+                      <input type="text" name="alcohol-duration" className="input-identificacion"/>
+                    </div>
+                  </div>
+
+                  <div className="drogas">
+                    <label>Drogas ilegales: </label>
+                    <input type="checkbox" id="drogas-yes" name="drogas" value="yes"/>
+                    <label htmlFor="drogas-yes">Sí</label>
+
+                    <input type="checkbox" id="drogas-no" name="drogas" value="no"/>
+                    <label htmlFor="drogas-no">No</label>
+
+                    <div className="drogas-info">
+                      <label>Tipo: </label>
+                      <input type="text" name="drogas-type" className="input-identificacion"/>
+                      <label>Cantidad y frecuencia: </label>
+                      <input type="text" name="drogas-quantity" className="input-identificacion"/>
+                    </div>
+
+                    <div className="drogas-age-info">
+                      <label>Edad de inicio: </label>
+                      <input type="text" name="drogas-age" className="input-identificacion"/>
+
+                      <label>Edad de abandono (si aplica): </label>
+                      <input type="text" name="drogas-age-end" className="input-identificacion"/>
+                    </div>
+
+                    <div className="drogas-duration-info">
+                      <label>Duración del hábito (en años):</label>
+                      <input type="text" name="drogas-duration" className="input-identificacion"/>
+                    </div>
+                  </div>
+
+
+
+            </div>
           </form>
 
           {/* Al darle click al svg lo manda al anterior contenido */}
