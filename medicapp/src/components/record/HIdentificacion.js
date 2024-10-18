@@ -496,6 +496,27 @@ const HIdentificacion = () => {
                     </div>
                   </div>
 
+                  {/* Farmacos */}
+                  <div className="farmaceutica">
+                    <label>Medicamentos: </label>
+                    <input type="checkbox" id="farmaceutica-yes" name="farmaceutica" value="yes"/>
+                    <label htmlFor="farmaceutica-yes">Sí</label>
+
+                    <input type="checkbox" id="farmaceutica-no" name="farmaceutica" value="no"/>
+                    <label htmlFor="farmaceutica-no">No</label>
+
+                    <div className="farmaceutica-info">
+                      <label>Cantidad y frecuencia: </label>
+                      <input type="text" name="farmaceutica-quantity" className="input-identificacion input-small"/>
+                    </div>
+
+                    <div className="medicamentos-info">
+                      <label>Nombre de medicamentos: </label>
+                      <textarea name="farmaceutica-name" className="input-identificacion" rows="4"></textarea>
+                    </div>
+                  </div>
+
+
 
 
             </div>

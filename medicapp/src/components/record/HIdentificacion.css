@@ -640,7 +640,6 @@
 }
 
 /* Otra sección */
-
 .drogas {
   display: flex;
   align-items: center;
@@ -749,5 +748,82 @@
 
   .drogas-duration-info input {
     width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Farmacos */
+.farmaceutica {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.farmaceutica-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.farmaceutica-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.input-small {
+  max-width: 100px;
+}
+
+.farmaceutica-info input {
+  padding: 5px;
+  max-width: 150px
+}
+
+/* Nueva clase para el textarea */
+.medicamentos-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el textarea */
+  flex-direction: column; /* Coloca el label y el textarea en columna */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+.medicamentos-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.medicamentos-info textarea {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+  width: 100%; /* Asegura que el textarea ocupe el 100% del ancho */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .farmaceutica {
+    flex-direction: column; /* Cambia a columna para los elementos de farmacéutica */
+  }
+
+  .farmaceutica-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .farmaceutica-info {
+    flex-direction: row; /* Alinea en columna para los inputs de cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .medicamentos-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
   }
 }
