@@ -79,17 +79,39 @@
     width: 120px;
   }
 
-  .status-recuperado {
-    color: #38b56d;
-    background-color: #b3e3c7;
+  .status-realizado {
+    color: white;
+    background-color: #5cb85c;
   }
 
-  .status-tratamiento {
-    background-color: #b6d3f9; /* Color accent */
-    color: #5195f0;
+  .status-revision {
+    background-color: #5bc0de; /* Color accent */
+    color: white;
   }
 
   .status-pendiente {
-    color: #ed6565;
-    background-color: #f8c4c4;
+    color: white;
+    background-color: #f0ad4e;
+  }
+
+  .status-cancelado {
+    color: white;
+    background-color: #C7253E;
+  }
+
+  .btn-expediente {
+    background-color: #40cab0; /* Azul */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-nada {
+    background-color: rgb(196, 192, 192); /* Azul */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
   }

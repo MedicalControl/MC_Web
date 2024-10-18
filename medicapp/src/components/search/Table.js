@@ -1,8 +1,44 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './Table.css';
+import axios from "axios";
 
 const Table = () => {
 
+    const [appointments, setAppointments] = useState([]);
+    const [cantidad , setCantidad] = useState(0);
+
+    const fetchAppointments = async () => {
+        
+        try {
+            const url = "api/app/appointment"
+            const token = localStorage.getItem('token');
+            console.log(`Token: ${token}`);
+            
+            const response = await axios.get(url, {
+                headers: {
+                    'authorization': token
+                }
+
+            });
+            
+            setCantidad(response.data.length);
+            setAppointments(response.data);
+
+            appointments.map((appointment) => {
+                console.log(appointment)
+            })
+            
+            console.log(`Total: ${cantidad}`);
+            console.log(response.data);
+            
+        } catch (error) {
+            console.error(`El error fue: ${error}`);
+        }
+    };
+
+    useEffect(() => {
+        fetchAppointments();
+    }, []);
     return (
         <main className="container">
                 <div className="heading-container">
@@ -27,43 +63,39 @@ const Table = () => {
                     <tr>
                         <th>Nombres</th>
                         <th>Apellidos</th>
-                        <th>Último Diagnóstico</th>
-                        <th>Última cita</th>
-                        <th>Próxima cita</th>
+                        <th>No Expediente</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {/* No1 */}
-                    <tr>
-                        <td>Jose Antonio</td>
-                        <td>Marin Zelaya</td>
-                        <td>Gripe</td>
-                        <td>20/10/2022</td>
-                        <td>1/12/2022</td>
-                        <td><span className="status status-recuperado">Recuperado</span></td>
-                    </tr>
 
-                    {/* No2 */}
-                    <tr>
-                        <td>Jose Antonio</td>
-                        <td>Marin Zelaya</td>
-                        <td>Gripe</td>
-                        <td>20/10/2022</td>
-                        <td>1/12/2022</td>
-                        <td><span className="status status-tratamiento">En tratamiento</span></td>
-                    </tr>
+                    {appointments.length > 0 ? (
+                        appointments.map((appointment, index) => (
+                            <tr key={index}>
+                                <td>{appointment.paciente.nombres}</td>
+                                <td>{appointment.paciente.apellidos}</td>
+                                <td>
+                                    {appointment.paciente.expediente.length > 0 ? (
+                                        <button className="btn-expediente">
+                                        {appointment.paciente.expediente[0].nroexpediente}
+                                        </button>
+                                    ) : (
+                                        'No disponible'
+                                    )}
+                                </td>                           
+                                <td><span className={`status status-${appointment.estado.toLowerCase()}`}>{appointment.estado}</span></td>
+                                
 
-                    {/* No3 */}
-                    <tr>
-                        <td>Jose Antonio</td>
-                        <td>Marin Zelaya</td>
-                        <td>Gripe</td>
-                        <td>20/10/2022</td>
-                        <td>1/12/2022</td>
-                        <td><span className="status status-pendiente">Pendiente</span></td>
-                    </tr>
+
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="6">No hay citas disponibles</td>
+                        </tr>
+                    )}   
 
                     
 
