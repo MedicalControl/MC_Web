@@ -1,0 +1,28 @@
+.content-container {
+    position: relative;
+    width: 100%; /* Asegúrate de que ocupa todo el ancho del contenedor */
+    height: 100%; /* Asegúrate de que ocupa todo el alto del contenedor */
+    transform: translateX(100%); /* Empieza fuera de la vista */
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición suave */
+}
+
+.content-container-enter {
+    transform: translateX(100%); /* Empieza fuera a la derecha */
+    opacity: 0; /* Invisible al inicio */
+}
+
+.content-container-enter-active {
+    transform: translateX(0); /* Se mueve a su lugar */
+    opacity: 1; /* Se hace visible */
+}
+
+.content-container-exit {
+    transform: translateX(0); /* Empieza en su lugar */
+    opacity: 1; /* Visible */
+}
+
+.content-container-exit-active {
+    transform: translateX(-100%); /* Se mueve fuera a la izquierda */
+    opacity: 0; /* Se hace invisible */
+}

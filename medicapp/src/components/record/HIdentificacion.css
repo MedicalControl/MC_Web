@@ -1,136 +1,829 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-
-  
-  .container-identificacion {
-    max-width: 960px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .header-identificacion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .header-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo,
-  .caduceo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .title-identificacion {
-    margin-left: 10px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .expediente {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  
-  .expediente span {
-    background-color: #38b2ac;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .form-identificacion {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #d1d1d1;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  @media (min-width: 768px) {
-    .form-identificacion {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  .full-row {
-    grid-column: span 2;
-  }
-  
-  
-  
-  .radio-group {
-    display: flex;
-    align-items: center;
-  }
-  .radio-group span {
-    margin-right: 10px;
-  }
-  
-  .radio-group label {
-    margin-right: 10px;
-  }
-  
-  
-  
-  .section {
-    margin-top: 20px;
-  }
-  
-  .section h3 {
-    margin-bottom: 10px;
-  }
-  
-  .checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-/* Css para la parte del perfil */
-.form-profile {
-    display: flex;
-    align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.profile-identificacion img {
-    width: 120px;
-    height: 160px;
-    background-color: #e2e8f0;
-    margin-right: 20px;
+.container-identificacion {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-identificacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo,
+.caduceo {
+  width: 40px;
+  height: 40px;
+}
+
+.title-identificacion {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.expediente-header {
+  display: flex;
+  justify-content: space-between; /* Alinea el contenido a los extremos */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.expediente {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.fecha-actual span,
+.expediente span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.expediente span {
+  background-color: #38b2ac;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.form-identificacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-identificacion .input-identificacion {
+  flex: 1 1 calc(48% - 10px); /* Mantiene el ancho en pantallas grandes */
+  min-width: 300px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .form-identificacion .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* Permite que se ajusten completamente */
+  }
+}
+
+.full-row {
+  width: 100%; /* Asegura que el campo "Dirección de residencia" ocupe toda la fila */
+  display: block; /* Se asegura que sea un bloque y esté debajo */
+  margin-top: 20px; /* Añade espacio debajo del campo */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  border-radius: 8px;
+  padding: 16px;
+  align-items: flex-start; /* Alinea los elementos al principio */
+  background-color: #f8f8f8;
+}
+
+/* Agrupando los radios */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos de radio */
+  padding-top: 10px; /* Espaciado superior */
+  padding-bottom: 10px; /* Espaciado inferior */
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center; /* Alinea el radio y el texto del label en el centro */
+  margin-right: 10px; /* Espacio entre cada opción de radio */
+}
+
+.radio-group span {
+  white-space: nowrap; /* Evita que el texto "Sexo:" se divida en varias líneas */
+  margin-right: 10px; /* Espacio entre el span y los inputs de radio */
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.checkbox-label {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.checkbox-label input {
+  margin-right: 5px; /* Espacio entre el checkbox y el texto */
+}
+
+.textarea-otros {
+  flex: 1 1 100%; /* El textarea ocupa una fila completa */
+  min-height: 60px; /* Asegura un tamaño adecuado para el textarea */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde del textarea */
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+  margin-top: 10px; /* Añade espacio entre el checkbox y el textarea */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .checkbox-group {
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas en pantallas pequeñas */
+  }
+
+  .checkbox-label {
+    flex: 1 1 calc(50% - 10px); /* Dos checkboxes por fila en pantallas pequeñas */
+  }
+
+  .textarea-otros {
+    flex: 1 1 100%; /* El textarea sigue ocupando toda la fila en pantallas pequeñas */
+  }
+}
+
+/* Estilos del section para de enfermedades hereditarias */
+/* Nueva clase para enfermedades hereditarias */
+.checkbox-group-hereditarias {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+  gap: 10px; /* Espaciado entre los elementos */
+}
+
+.checkbox-group-hereditarias label {
+  flex: 1 1 calc(22% - 10px); /* Hasta 4 elementos por fila */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  box-sizing: border-box;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .checkbox-group-hereditarias label {
+    flex: 1 1 calc(50% - 10px); /* 2 elementos por fila en pantallas pequeñas */
+  }
+}
+
+/* Css para la parte del perfil */
+.form-profile {
+  display: flex;
+  align-items: center;
+}
+
+.img-profile {
+  width: 120px;
+  height: 160px;
+  background-color: #e2e8f0;
+}
+
+/* Contenedor de cada grupo de inputs */
+.form-row-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los inputs */
+  width: 100%; /* Asegura que el grupo ocupe el ancho completo */
+}
+
+/* Ajustes para los inputs dentro de los grupos */
+.form-row-group .input-identificacion {
+  flex: 1 1 calc(32% - 10px); /* Ocupa el 32% del ancho para 3 inputs por fila */
+  min-width: 150px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .form-row-group .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* Permite que se ajusten completamente */
+  }
 }
 
 .profile-identificacion {
-    grid-column: 1 / span 1;
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-container {
-    grid-column: 2 / span 1;
-  }
-  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .input-identificacion {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.parents-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.parents-row .input-identificacion {
+  flex: 1 1 calc(50% - 10px); /* Cada input ocupará el 50% del contenedor, menos el espacio del gap */
+  min-width: 300px; /* Asegura que los inputs tengan un ancho mínimo */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .parents-row .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* No hay un ancho mínimo, permite que se ajusten */
   }
-  .contact-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-row .input-identificacion {
+  flex: 1 1 calc(50% - 10px); /* Hace que cada input ocupe el 50% del contenedor, menos el espacio del gap */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .contact-row .input-identificacion {
+    flex: 1 1 calc(100% - 10px); /* Cada input ocupará el 100% en pantallas pequeñas */
+    min-width: 0; /* Permite que se ajusten completamente */
+  }
+}
+
+/* Estilos para la flecha derecha */
+.next-identificacion {
+  margin-top: 10px;
+  text-align: right;
+  position: relative;
+}
+
+.before-identificacion {
+  margin-top: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.icon-next-identificacion,
+.icon-left-identificacion {
+  cursor: pointer;
+}
+
+/* Aca esta el css del otro contenido de la card */
+.form-antecedentes {
+  display: flex;
+  flex-direction: column; /* Cambia a columna para alinear verticalmente */
+  gap: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Seccion de inmunizaciones */
+.immunizations {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  gap: 10px; /* Espacio entre el label y los checkboxes */
+}
+
+.immunization-checkbox {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  gap: 10px; /* Espacio entre los checkboxes y el label */
+}
+
+.immunization-checkbox input {
+  margin-right: 5px; /* Espacio a la derecha del checkbox */
+}
+
+.habits {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sleep-hours,
+.work-hours {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  flex: 1 1 calc(33.33% -20px);
+  box-sizing: border-box;
+}
+
+.habits label {
+  min-width: 100px;
+}
+
+.habits input {
+  padding: 5px;
+  align-items: center;
+}
+
+/* Responsivo: en pantallas pequeñas, todo en una columna */
+@media (max-width: 600px) {
+  .sleep-hours,
+  .work-hours {
+    flex: 1 1 100%; /* Ocupan el 100% del ancho */
+  }
+
+  .habits {
+    flex-direction: column;
+  }
+}
+
+.activity,
+.nutrition {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Asegura que ambos contenedores ocupen el 100% del ancho y estén en filas separadas */
+}
+
+.activity label,
+.nutrition label {
+  min-width: 100px;
+}
+
+.activity input,
+.nutrition input {
+  flex: 1;
+  padding: 5px;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .activity,
+  .nutrition {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: stretch; /* Alinea el input al ancho completo */
+  }
+
+  .activity label,
+  .nutrition label {
+    min-width: 100%; /* Asegura que el label ocupe el 100% en pantallas pequeñas */
+  }
+
+  .activity input,
+  .nutrition input {
+    width: 100%; /* Los inputs también ocuparán el 100% */
+  }
+}
+
+/* Aca este es otro contenedor */
+.sustancias-uso {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+
+.tabaco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabaco-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tabaco-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.tabaco-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .tabaco {
+    flex-direction: column; /* Cambia a columna para los elementos de tabaco */
+  }
+
+  .tabaco-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .tabaco-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
     gap: 10px;
+    align-items: center;
   }
+}
+
+.tabaco-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabaco-age-info label {
+  min-width: 100px;
+}
+
+.tabaco-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .tabaco-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .tabaco-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .tabaco-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.tabaco-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.tabaco-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.tabaco-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .tabaco-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .tabaco-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .tabaco-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Otra seccion */
+.alcohol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.alcohol-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alcohol-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.alcohol-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .alcohol {
+    flex-direction: column; /* Cambia a columna para los elementos de alcohol */
+  }
+
+  .alcohol-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .alcohol-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.alcohol-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.alcohol-age-info label {
+  min-width: 100px;
+}
+
+.alcohol-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .alcohol-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .alcohol-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .alcohol-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.alcohol-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.alcohol-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.alcohol-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .alcohol-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .alcohol-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .alcohol-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Otra sección */
+.drogas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drogas-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.drogas-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.drogas-info input {
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .drogas {
+    flex-direction: column; /* Cambia a columna para los elementos de drogas */
+  }
+
+  .drogas-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .drogas-info {
+    flex-direction: row; /* Alinea en columna para los inputs de tipo y cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.drogas-age-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drogas-age-info label {
+  min-width: 100px;
+}
+
+.drogas-age-info input {
+  flex: 1; /* Cada input ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+@media (max-width: 600px) {
+  .drogas-age-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .drogas-age-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .drogas-age-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+.drogas-duration-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el input */
+}
+
+/* Asegura que los inputs en este contenedor también sean responsivos */
+.drogas-duration-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.drogas-duration-info input {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .drogas-duration-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+
+  .drogas-duration-info label {
+    min-width: auto; /* Permite que los labels ocupen el ancho disponible */
+  }
+
+  .drogas-duration-info input {
+    width: 100%; /* Los inputs ocuparán el 100% del ancho */
+  }
+}
+
+/* Farmacos */
+.farmaceutica {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.farmaceutica-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.farmaceutica-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.input-small {
+  max-width: 100px;
+}
+
+.farmaceutica-info input {
+  padding: 5px;
+  max-width: 150px
+}
+
+/* Nueva clase para el textarea */
+.medicamentos-info {
+  display: flex;
+  gap: 10px; /* Espacio entre el label y el textarea */
+  flex-direction: column; /* Coloca el label y el textarea en columna */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+.medicamentos-info label {
+  min-width: auto; /* Ancho mínimo para el label */
+}
+
+.medicamentos-info textarea {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 5px; /* Espaciado interno */
+  width: 100%; /* Asegura que el textarea ocupe el 100% del ancho */
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .sustancias-uso {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .farmaceutica {
+    flex-direction: column; /* Cambia a columna para los elementos de farmacéutica */
+  }
+
+  .farmaceutica-checkbox {
+    display: flex; /* Asegura que los checkboxes se mantengan en fila */
+    flex-direction: row; /* Mantiene los checkboxes en fila */
+    gap: 10px; /* Espacio entre los checkboxes */
+    align-items: center; /* Alinea verticalmente al centro */
+  }
+
+  .farmaceutica-info {
+    flex-direction: row; /* Alinea en columna para los inputs de cantidad */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .medicamentos-info {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 15px; /* Espacio vertical entre los elementos */
+  }
+}

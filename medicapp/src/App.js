@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import LoginForm from './components/LoginForm';
 import {BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
-import SideBar from './components/search/SideBar';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Dashboard from './components/search/Dashboard';
 import Header from './components/search/Header';
 import Table from './components/search/Table';
@@ -12,6 +12,7 @@ import HIdentificacion from './components/record/HIdentificacion';
 import Test from './components/record/Test';
 import Pacientes from './components/pacientes/Pacientes';
 import Expediente from './components/record/Expediente';
+import SideBar from './components/search/SideBar';
 
 
 import './App.css';
@@ -79,6 +80,30 @@ function App() {
           <Route path='/expediente' element={<Expediente />}/>
 
         </Routes>
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            classNames="scale-fade" // Cambia el nombre de la clase para el nuevo efecto
+            timeout={300}
+          >
+
+          <Routes location={location}>
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/" element={<Table />} />
+            <Route path="/laboratorio" element={<LabTable />} />
+            <Route path="/agenda" element={<Agenda />} />
+            <Route path="/agenda2" element={<Agenda2 />} /> 
+            <Route path="/cita" element={<Cita />} />
+            <Route path='/identificacion' element={<HIdentificacion />}/>
+            <Route path='/test' element={<Test />}/>
+            <Route path='/pacientes' element={<Pacientes />}/>
+            <Route path='/expediente' element={<Expediente />}/>
+
+          </Routes>
+            
+          </CSSTransition>
+        </TransitionGroup>
+
       </Layout>
   );
 }

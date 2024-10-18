@@ -39,25 +39,25 @@ const Orden = ({ onClose, ontipoExamenChange }) => {
             <div className="card-content">
                 <form>
                     <div className="form-group">
-                        <label for="unidad">Unidad de Salud:</label>
-                        <input id="unidad" placeholder="Unidad de Salud: 'Cuidado y Prevención'"/>
+                        <label for="unidad" className="label-orden">Unidad de Salud:</label>
+                        <input className="input-orden" id="unidad" placeholder="Unidad de Salud: 'Cuidado y Prevención'"/>
                     </div>
 
                     <div className="form-group">
-                        <label for="nombre">Nombre y apellidos del paciente: </label>
-                        <input id="nombre" placeholder="Yasser José Darce Mairena"/>
+                        <label for="nombre" className="label-orden">Nombre y apellidos del paciente: </label>
+                        <input className="input-orden" id="nombre" placeholder="Yasser José Darce Mairena"/>
                     </div>
 
                     <div className="form-group">
-                        <label for="fecha">Cédula: </label>
-                        <input id="cedula" placeholder="001-0902005-1003N"/>
+                        <label for="fecha" className="label-orden">Cédula: </label>
+                        <input className="input-orden" id="cedula" placeholder="001-0902005-1003N"/>
                     </div>
 
                     
 
                     <div className="form-group">
-                        <label for="detalles">Detalles: </label>
-                        <textarea id="detalles" placeholder="Evaluar niveles de hemoglobina y glóbulos rojos en un paciente 
+                        <label for="detalles" className="label-orden">Detalles: </label>
+                        <textarea id="detalles" className="detalles-orden" placeholder="Evaluar niveles de hemoglobina y glóbulos rojos en un paciente 
                         con síntomas de fatiga crónica"></textarea>
                     </div>
                 </form>

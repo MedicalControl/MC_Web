@@ -62,7 +62,7 @@
     align-items: column;
 }
 
-textarea {
+.detalles-orden {
     height: 40px;
     resize: none;
     border: none;
@@ -71,14 +71,14 @@ textarea {
     font-size: 0.875rem;
 }
 
-label {
+.label-orden {
     font-size: 0.8rem;
     font-weight: 600;
     margin-right: 16px;
     flex: 1;
 }
 
-input, select, textarea {
+.input-orden, .detalles-orden {
     padding: 6px;
     border: none;
     border-bottom: 1px solid #e5e7eb; /* Línea debajo */

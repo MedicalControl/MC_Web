@@ -61,3 +61,23 @@
 
 
 
+.scale-fade-enter {
+  opacity: 0;
+  transform: scale(0.9); /* Escala ligeramente hacia abajo */
+}
+.scale-fade-enter-active {
+  opacity: 1;
+  transform: scale(1); /* Escala a su tamaño original */
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+.scale-fade-exit {
+  opacity: 1;
+  transform: scale(1); /* Mantiene el tamaño original al salir */
+}
+.scale-fade-exit-active {
+  opacity: 0.5; /* Mantiene cierta opacidad al salir */
+  transform: scale(0.9); /* Escala hacia abajo al salir */
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+
