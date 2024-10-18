@@ -381,6 +381,32 @@ const HIdentificacion = () => {
                 />
               </div>
             </div>
+
+            <div className="habits">
+                  <label>Habitos</label>
+                  <div className="sleep-hours">
+                    <label>Horas de sueño</label>
+                    <input type="text" name="sleep-hours" className="input-identificacion"/>
+                  </div>
+
+                  <div className="work-hours">
+                    <label>Horas laborales</label>
+                    <input type="text" name="work-hours" className="input-identificacion"/>
+                  </div>
+
+                  <div className="activity">
+                    <label>Tipo y hora de actividad fisica</label>
+                    <input type="text" name="activity" className="input-identificacion"/>
+                  </div>
+
+                  <div className="nutrition">
+                    <label>Alimentación</label>
+                    <input type="text" name="nutrition" className="input-identificacion"/>
+                  </div>
+
+            </div>
+
+            
           </form>
 
           {/* Al darle click al svg lo manda al anterior contenido */}

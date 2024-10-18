@@ -50,9 +50,9 @@
 
 .fecha-actual span,
 .expediente span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 }
 
 .expediente span {
@@ -299,10 +299,10 @@
   position: relative;
 }
 
-.icon-next-identificacion, .icon-left-identificacion {
+.icon-next-identificacion,
+.icon-left-identificacion {
   cursor: pointer;
 }
-
 
 /* Aca esta el css del otro contenido de la card */
 .form-antecedentes {
@@ -332,3 +332,73 @@
 .immunization-checkbox input {
   margin-right: 5px; /* Espacio a la derecha del checkbox */
 }
+
+.habits {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sleep-hours,
+.work-hours {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  flex: 1 1 calc(33.33% -20px);
+  box-sizing: border-box;
+}
+
+.habits label {
+  min-width: 100px;
+}
+
+.habits input {
+  padding: 5px;
+  align-items: center;
+}
+
+/* Responsivo: en pantallas pequeñas, todo en una columna */
+@media (max-width: 600px) {
+  .sleep-hours,
+  .work-hours {
+    flex: 1 1 100%; /* Ocupan el 100% del ancho */
+  }
+
+  .habits {
+    flex-direction: column;
+  }
+}
+
+.activity, .nutrition {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Asegura que ambos contenedores ocupen el 100% del ancho y estén en filas separadas */
+}
+
+.activity label, .nutrition label {
+  min-width: 100px;
+}
+
+.activity input, .nutrition input {
+  flex: 1;
+  padding: 5px;
+}
+
+/* Responsivo: En pantallas pequeñas */
+@media (max-width: 600px) {
+  .activity, .nutrition {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: stretch; /* Alinea el input al ancho completo */
+  }
+
+  .activity label, .nutrition label {
+    min-width: 100%; /* Asegura que el label ocupe el 100% en pantallas pequeñas */
+  }
+
+  .activity input, .nutrition input {
+    width: 100%; /* Los inputs también ocuparán el 100% */
+  }
+}
+
