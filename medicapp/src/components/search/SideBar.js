@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SideBar.css";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
+
+  const [activeSection, setActiveSection] = useState("");
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+  };
+
   return (
     <div className="main-sidebar">
       <aside className="sidebar">
@@ -13,8 +20,8 @@ const SideBar = () => {
         <span className="menu-title">MENU</span>
 
         {/* Home */}
-        <Link to={"/"}>
-          <button className="menu-btn">
+        <Link to={"/"} onClick={() => handleSectionClick("home")}>
+          <button className={`menu-btn ${activeSection === "home" ? "active" : ""}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="ionicon"
@@ -41,8 +48,8 @@ const SideBar = () => {
         </Link>
 
         {/* Calendario */}
-        <Link to={"/agenda"}>
-          <button className="menu-btn">
+        <Link to={"/agenda"} onClick={() => handleSectionClick("agenda")}>
+          <button className={`menu-btn ${activeSection === "agenda" ? "active" : ""}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="ionicon"
@@ -87,8 +94,8 @@ const SideBar = () => {
           </button>
         </Link>
         {/* Laboratorio */}
-        <Link to={"/laboratorio"}>
-          <button className="menu-btn">
+        <Link to={"/laboratorio"} onClick={() => handleSectionClick("laboratorio")}>
+          <button className={`menu-btn ${activeSection === "laboratorio" ? "active" : ""}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="ionicon"
@@ -107,7 +114,7 @@ const SideBar = () => {
         </Link>
 
         {/* Chat */}
-        <button className="menu-btn">
+        <button className="menu-btn" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"
@@ -127,8 +134,8 @@ const SideBar = () => {
         </button>
 
         {/* Pacientes pendientes */}
-        <Link to={"/pacientes"}>
-          <button className="menu-btn">
+        <Link to={"/pacientes"} onClick={() => handleSectionClick("pacientes")}>
+          <button className={`menu-btn ${activeSection === "pacientes" ? "active" : ""}`}>
             <svg
               viewBox="0 0 28 28"
               version="1.1"
