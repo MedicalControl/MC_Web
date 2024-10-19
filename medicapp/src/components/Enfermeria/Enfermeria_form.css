@@ -1,0 +1,169 @@
+/* Elimina los márgenes por defecto // Enfermeria_form.css*/
+.header-form h2,
+.header-form h4 {
+  margin: 0;  /* Elimina márgenes de h2 y h4 */
+}
+
+.header-top{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Añadir fondo y aplicar padding */
+.header-form-enfermeria {
+  background-color: #2AB9B7; /* El color que prefieras */
+  padding: 10px;  /* Ajusta el espacio dentro del contenedor */
+  color: white;   /* Asegúrate de que el texto sea visible */
+  border-radius: 4px;  /* Opcional: bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Opcional: sombra */
+  width: 720px;
+}
+
+.content-enfermeria {
+    width: 700px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group2 {
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    margin-left: 50px;
+    
+  }
+   .form-group7{
+    display: flex;
+    justify-content: flex-end;
+   }
+
+  .form-group4, .form-group6, .form-group7{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 50px;
+  }
+
+.form-group6 {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+
+  }
+  
+.form-group1, .form-group5{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+
+  .form-group3{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .input_servicio{
+    width: 140px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .input_cama{
+    width: 130px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+.input_nombre_establecimiento, .input_expediente, .input_nombre, .input_cedula, .input_inss   {
+    width: 300px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .observaciones_title{
+    font-size: 17px;
+    color: #1F1F1F;
+    display: flex;
+    font-weight: 600;
+    margin-top: 20px;
+    
+  }
+
+  .textArea_observacion{
+    width: 300px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .btn_AddNota{
+    background-color: #2AB9B7;
+    margin-top: 10px;
+    width: 100%; 
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .save-btn {
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+
+  
+  button {
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #23908d;
+  }
+  
+  
+  .table-enfermeria {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .th-enfermeria, .td-enfermeria {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word; /* Fuerza el salto de línea */
+    overflow-wrap: break-word; /* Garantiza que el texto no se desborde */
+    max-width: 300px; /* Ajusta según tu diseño */
+  }
+  .th-enfermeria  {
+  color: #1F1F1F;
+  font-weight: 600;
+  }
+  @media (max-width: 780px) {
+     .form-group1,.form-group2,.form-group3,.form-group4,.form-group5, .form-group6, .form-group7 input {
+      width: 100%;
+    }
+    .content-enfermeria{
+      width: 85%;
+    }
+    .input_nombre_establecimiento, .input_expediente, .input_nombre, .input_cedula, .input_inss, .input_servicio, .input_cama{
+      width: 70%;
+      margin-right: 0px;
+      margin-left: 0;
+    }
+  }

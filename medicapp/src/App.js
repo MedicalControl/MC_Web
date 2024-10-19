@@ -17,6 +17,8 @@ import './App.css';
 import LabTable from './components/laboratory/LabTable';
 import Admisiones from './components/record/Admisiones';
 
+import Enfermeria_form from './components/Enfermeria/Enfermeria_form';
+
 import { MedicalRecordProvider } from './context/MedicalRecordContext';
 
 // con este componente muestra el SideBar y Header mientras no este en la ruta /login
@@ -74,6 +76,8 @@ function App() {
             document.title = 'Expediente';
         } else if (location.pathname === '/admisiones') {
             document.title = 'Admisiones';
+        } else if (location.pathname === '/enfermeria') {
+            document.title = 'Enfermeria';
         }
     }, [location]);
 
@@ -97,6 +101,7 @@ function App() {
                         <Route path="/pacientes" element={<Pacientes />} />
                         <Route path="/expediente" element={<Expediente />} />
                         <Route path="/admisiones" element={<Admisiones />} />
+                        <Route path="/enfermeria" element={<Enfermeria_form/>} />
                     </Routes>
                 </CSSTransition>
             </TransitionGroup>
