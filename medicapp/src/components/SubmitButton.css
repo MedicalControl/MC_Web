@@ -21,10 +21,7 @@
 .Container-submit{
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-=======
     margin: 15px 0;
->>>>>>> CriCri
 }
 .Submit-login {
     width: 330px;
@@ -44,8 +41,4 @@
 .Container-submit{
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> CriCri

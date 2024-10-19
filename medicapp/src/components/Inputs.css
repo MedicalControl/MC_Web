@@ -16,7 +16,6 @@
   color: #545454;
 }
 
-<<<<<<< HEAD
 
 .link-form  {
 font-size: 0.875rem;
@@ -24,18 +23,3 @@ color: #545454;
 text-decoration: none;
 margin-left: 70px;
 }
-=======
-.link-form {
-  font-size: 0.875rem;
-  color: #545454;
-  text-decoration: none;
-  margin-left: 70px;
-}
-
-.error-message {
-  color: red; /* Cambia esto al color que desees para el mensaje de error */
-  font-size: 14px;
-  margin-top: 5px; /* Espacio entre el input y el mensaje de error */
-  display: block; /* Asegúrate de que el mensaje se muestre en una nueva línea */
-}
->>>>>>> CriCri
