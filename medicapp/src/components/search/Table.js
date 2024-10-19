@@ -4,7 +4,7 @@ import { fetchAppointments } from "../../controllers/appointmentController";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import { fetchMe } from "../../controllers/meController";
 
-const Table = () => {
+const Table = ({ onExpedienteClick }) => {
     const navigate = useNavigate(); // Inicializa useNavigate
     const [appointments, setAppointments] = useState([]);
     const [cantidad, setCantidad] = useState(0);
@@ -59,46 +59,48 @@ const Table = () => {
                     <option>Opción 2</option>
                 </select>
             </div>
-
-            <table className="patient-table">
-                <thead>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>No Expediente</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {filteredAppointments.length > 0 ? (
-                        filteredAppointments.map((appointment, index) => (
-                            <tr key={index}>
-                                <td>{appointment.paciente.nombres}</td>
-                                <td>{appointment.paciente.apellidos}</td>
-                                <td>
-                                    {appointment.paciente.expediente.length > 0 ? (
-                                        <button className="btn-expediente">
-                                            {appointment.paciente.expediente[0].nroexpediente}
-                                        </button>
-                                    ) : (
-                                        'No disponible'
-                                    )}
-                                </td>
-                                <td>
-                                    <span className={`status status-${appointment.estado.toLowerCase()}`}>
-                                        {appointment.estado}
-                                    </span>
-                                </td>
-                            </tr>
-                        ))
-                    ) : (
+            
+            <div className="patient-table-container">
+                <table className="patient-table">
+                    <thead>
                         <tr>
-                            <td colSpan="4">No hay registros disponibles</td>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>No Expediente</th>
+                            <th>Estado</th>
                         </tr>
-                    )}
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        {filteredAppointments.length > 0 ? (
+                            filteredAppointments.map((appointment, index) => (
+                                <tr key={index}>
+                                    <td>{appointment.paciente.nombres}</td>
+                                    <td>{appointment.paciente.apellidos}</td>
+                                    <td>
+                                        {appointment.paciente.expediente.length > 0 ? (
+                                            <button className="btn-expediente" onClick={onExpedienteClick}>
+                                                {appointment.paciente.expediente[0].nroexpediente}
+                                            </button>
+                                        ) : (
+                                            'No disponible'
+                                        )}
+                                    </td>
+                                    <td>
+                                        <span className={`status status-${appointment.estado.toLowerCase()}`}>
+                                            {appointment.estado}
+                                        </span>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="4">No hay registros disponibles</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
         </main>
     );
 }

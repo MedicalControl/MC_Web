@@ -10,16 +10,31 @@
     flex-grow: 1;
 }
 .heading-container {
-    display: flex;
-    align-items: center;
-    white-space: nowrap; /* Evita el salto de línea */
-  }
-  
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+  text-align: center; /* Centra el texto en pantallas pequeñas */
+  padding: 16px; /* Añade un poco de espacio alrededor del contenedor */
+}
+
+.heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 4px 8px; /* Añade un espacio alrededor de cada encabezado */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
   .heading {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-right: 8px; /* Añade espacio entre los elementos */
+      font-size: 1rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
+      margin: 4px; /* Ajusta el margen para una mejor presentación */
   }
+
+  .heading-container {
+      flex-direction: column; /* Cambia la dirección de los elementos a columna en pantallas pequeñas */
+  }
+}
+
   
   .highlight {
     color: #14b8a6; /* Color teal */
@@ -31,6 +46,7 @@
     display: flex;
     align-items: center;
     margin-top: 16px;
+    flex-wrap: wrap;
   }
   
   .search-input {
@@ -46,7 +62,27 @@
     border-radius: 4px;
     padding: 8px;
   }
+
+  @media (max-width: 768px) {
+    .search-container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: stretch; /* Alinea los elementos para que ocupen todo el ancho */
+    }
+
+    .search-input {
+        margin-bottom: 8px; /* Añade un espacio inferior en pantallas pequeñas */
+    }
+
+    .sort-select {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    }
+}
   
+  .patient-table-container {
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
   .patient-table {
     width: 100%;
     margin-top: 24px;
