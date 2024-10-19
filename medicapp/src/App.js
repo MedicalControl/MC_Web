@@ -7,7 +7,6 @@ import Header from './components/search/Header';
 import Table from './components/search/Table';
 import Agenda from './components/calendar/Agenda';
 import Agenda2 from './components/calendar/Agenda2';
-import Cita from './components/record/Cita';
 import HIdentificacion from './components/record/HIdentificacion';
 import Test from './components/record/Test';
 import Pacientes from './components/pacientes/Pacientes';
@@ -17,9 +16,12 @@ import './App.css';
 import LabTable from './components/laboratory/LabTable';
 import Admisiones from './components/record/Admisiones';
 
+import CitaMedica from './components/Appoiment/CitaMedica';
+
 import Enfermeria_form from './components/Enfermeria/Enfermeria_form';
 
 import { MedicalRecordProvider } from './context/MedicalRecordContext';
+import { Import } from 'lucide-react';
 
 // con este componente muestra el SideBar y Header mientras no este en la ruta /login
 function Layout({ children, sideBarState, onHomeClick }) {
@@ -78,6 +80,8 @@ function App() {
             document.title = 'Admisiones';
         } else if (location.pathname === '/enfermeria') {
             document.title = 'Enfermeria';
+        } else if (location.pathname === '/citaMedica') {
+            document.title = 'Cita Medica';
         }
     }, [location]);
 
@@ -95,13 +99,13 @@ function App() {
                         <Route path="/laboratorio" element={<LabTable />} />
                         <Route path="/agenda" element={<Agenda />} />
                         <Route path="/agenda2" element={<Agenda2 />} /> 
-                        <Route path="/cita" element={<Cita />} />
                         <Route path="/identificacion" element={<HIdentificacion />} />
                         <Route path="/test" element={<Test />} />
                         <Route path="/pacientes" element={<Pacientes />} />
                         <Route path="/expediente" element={<Expediente />} />
                         <Route path="/admisiones" element={<Admisiones />} />
                         <Route path="/enfermeria" element={<Enfermeria_form/>} />
+                        <Route path="/citaMedica" element={<CitaMedica />} />
                     </Routes>
                 </CSSTransition>
             </TransitionGroup>

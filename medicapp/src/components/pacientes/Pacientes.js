@@ -47,7 +47,7 @@ const Pacientes = () => {
                             <td>
                                 <span className="status status-atender">
                                     <Link 
-                                    to="/expediente"
+                                    to="/citaMedica"
                                     style={{ textDecoration: 'none', color: 'white' }}>               
                                         Atender
                                     </Link>
