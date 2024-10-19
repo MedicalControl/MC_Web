@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HIdentificacion.css";
+import { useMedicalRecord } from "../../context/MedicalRecordContext";
 
 const HIdentificacion = () => {
   const [currentContent, setCurrentContent] = useState("identificacion"); // Puedes usar 'identificacion' y 'otroContenido'
+  
+  const { medicalRecord } = useMedicalRecord();
 
   const handleNextClick = () => {
     setCurrentContent("otroContenido");
+    console.log("Contenido: ", medicalRecord);
   };
 
   const handleBackClick = () => {
@@ -35,7 +39,7 @@ const HIdentificacion = () => {
             </div>
 
             <div className="expediente">
-              <span>Expediente: 29294ASD</span>
+              <span>Expediente: {medicalRecord[0]?.nroexpediente || 'No disponible'}</span>
             </div>
           </div>
 
@@ -50,13 +54,13 @@ const HIdentificacion = () => {
                   <input
                     type="text"
                     name="nombres"
-                    placeholder="Nombres y apellidos"
+                    placeholder={medicalRecord[0]?.paciente?.nombres + " " + medicalRecord[0]?.paciente?.apellidos}
                     className="input-identificacion"
                   />
                   <input
                     type="text"
                     name="cedula"
-                    placeholder="No. de cédula"
+                    placeholder={medicalRecord[0]?.paciente?.nrocedula}
                     className="input-identificacion"
                   />
                   <input
@@ -376,149 +380,264 @@ const HIdentificacion = () => {
                 />
                 <label for="immunization-no">No</label>
 
+                <input className="input-identificacion" />
+              </div>
+            </div>
+
+            <div className="habits">
+              <label>Habitos</label>
+              <div className="sleep-hours">
+                <label>Horas de sueño</label>
                 <input
+                  type="text"
+                  name="sleep-hours"
+                  className="input-identificacion"
+                />
+              </div>
+
+              <div className="work-hours">
+                <label>Horas laborales</label>
+                <input
+                  type="text"
+                  name="work-hours"
+                  className="input-identificacion"
+                />
+              </div>
+
+              <div className="activity">
+                <label>Tipo y hora de actividad fisica</label>
+                <input
+                  type="text"
+                  name="activity"
+                  className="input-identificacion"
+                />
+              </div>
+
+              <div className="nutrition">
+                <label>Alimentación</label>
+                <input
+                  type="text"
+                  name="nutrition"
                   className="input-identificacion"
                 />
               </div>
             </div>
 
-            <div className="habits">
-                  <label>Habitos</label>
-                  <div className="sleep-hours">
-                    <label>Horas de sueño</label>
-                    <input type="text" name="sleep-hours" className="input-identificacion"/>
-                  </div>
-
-                  <div className="work-hours">
-                    <label>Horas laborales</label>
-                    <input type="text" name="work-hours" className="input-identificacion"/>
-                  </div>
-
-                  <div className="activity">
-                    <label>Tipo y hora de actividad fisica</label>
-                    <input type="text" name="activity" className="input-identificacion"/>
-                  </div>
-
-                  <div className="nutrition">
-                    <label>Alimentación</label>
-                    <input type="text" name="nutrition" className="input-identificacion"/>
-                  </div>
-
-            </div>
-
             <div className="sustancias-uso">
+              <div className="tabaco">
+                <label>Tabaco: </label>
+                <input
+                  type="checkbox"
+                  id="tabaco-yes"
+                  name="tabaco"
+                  value="yes"
+                />
+                <label for="tabaco-yes">Sí</label>
 
-                  <div className="tabaco">
-                    <label>Tabaco: </label>
-                    <input type="checkbox" id="tabaco-yes" name="tabaco" value="yes"/>
-                    <label for="tabaco-yes">Sí</label>
+                <input
+                  type="checkbox"
+                  id="tabaco-no"
+                  name="tabaco"
+                  value="no"
+                />
+                <label for="tabaco-no">No</label>
 
-                    <input type="checkbox" id="tabaco-no" name="tabaco" value="no"/>
-                    <label for="tabaco-no">No</label>
+                <div className="tabaco-info">
+                  <label>Tipo: </label>
+                  <input
+                    type="text"
+                    name="tabaco-type"
+                    className="input-identificacion"
+                  />
+                  <label>Cantidad y frecuencia: </label>
+                  <input
+                    type="text"
+                    name="tabaco-quantity"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                    <div className="tabaco-info">
-                      <label>Tipo: </label>
-                      <input type="text" name="tabaco-type" className="input-identificacion"/>
-                      <label>Cantidad y frecuencia: </label>
-                      <input type="text" name="tabaco-quantity" className="input-identificacion"/>
-                    </div>
+                <div className="tabaco-age-info">
+                  <label>Edad de inicio: </label>
+                  <input
+                    type="text"
+                    name="tabaco-age"
+                    className="input-identificacion"
+                  />
 
-                    <div className="tabaco-age-info">
-                      <label>Edad de inicio: </label>
-                      <input type="text" name="tabaco-age" className="input-identificacion"/>
+                  <label>Edad de abandono (si aplica): </label>
+                  <input
+                    type="text"
+                    name="tabaco-age-end"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                      <label>Edad de abandono (si aplica): </label>
-                      <input type="text" name="tabaco-age-end" className="input-identificacion"/>
+                <div className="tabaco-duration-info">
+                  <label>Duración del habito (en años):</label>
+                  <input
+                    type="text"
+                    name="tabaco-duration"
+                    className="input-identificacion"
+                  />
+                </div>
+              </div>
 
-                    </div>
+              <div className="alcohol">
+                <label>Alcohol: </label>
+                <input
+                  type="checkbox"
+                  id="alcohol-yes"
+                  name="alcohol"
+                  value="yes"
+                />
+                <label htmlFor="alcohol-yes">Sí</label>
 
-                    <div className="tabaco-duration-info">
-                      <label>Duración del habito (en años):</label>
-                      <input type="text" name="tabaco-duration" className="input-identificacion"/>
-                    </div>
-                  </div>
+                <input
+                  type="checkbox"
+                  id="alcohol-no"
+                  name="alcohol"
+                  value="no"
+                />
+                <label htmlFor="alcohol-no">No</label>
 
-                  <div className="alcohol">
-                    <label>Alcohol: </label>
-                    <input type="checkbox" id="alcohol-yes" name="alcohol" value="yes"/>
-                    <label htmlFor="alcohol-yes">Sí</label>
+                <div className="alcohol-info">
+                  <label>Tipo: </label>
+                  <input
+                    type="text"
+                    name="alcohol-type"
+                    className="input-identificacion"
+                  />
+                  <label>Cantidad y frecuencia: </label>
+                  <input
+                    type="text"
+                    name="alcohol-quantity"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                    <input type="checkbox" id="alcohol-no" name="alcohol" value="no"/>
-                    <label htmlFor="alcohol-no">No</label>
+                <div className="alcohol-age-info">
+                  <label>Edad de inicio: </label>
+                  <input
+                    type="text"
+                    name="alcohol-age"
+                    className="input-identificacion"
+                  />
 
-                    <div className="alcohol-info">
-                      <label>Tipo: </label>
-                      <input type="text" name="alcohol-type" className="input-identificacion"/>
-                      <label>Cantidad y frecuencia: </label>
-                      <input type="text" name="alcohol-quantity" className="input-identificacion"/>
-                    </div>
+                  <label>Edad de abandono (si aplica): </label>
+                  <input
+                    type="text"
+                    name="alcohol-age-end"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                    <div className="alcohol-age-info">
-                      <label>Edad de inicio: </label>
-                      <input type="text" name="alcohol-age" className="input-identificacion"/>
+                <div className="alcohol-duration-info">
+                  <label>Duración del hábito (en años):</label>
+                  <input
+                    type="text"
+                    name="alcohol-duration"
+                    className="input-identificacion"
+                  />
+                </div>
+              </div>
 
-                      <label>Edad de abandono (si aplica): </label>
-                      <input type="text" name="alcohol-age-end" className="input-identificacion"/>
-                    </div>
+              <div className="drogas">
+                <label>Drogas ilegales: </label>
+                <input
+                  type="checkbox"
+                  id="drogas-yes"
+                  name="drogas"
+                  value="yes"
+                />
+                <label htmlFor="drogas-yes">Sí</label>
 
-                    <div className="alcohol-duration-info">
-                      <label>Duración del hábito (en años):</label>
-                      <input type="text" name="alcohol-duration" className="input-identificacion"/>
-                    </div>
-                  </div>
+                <input
+                  type="checkbox"
+                  id="drogas-no"
+                  name="drogas"
+                  value="no"
+                />
+                <label htmlFor="drogas-no">No</label>
 
-                  <div className="drogas">
-                    <label>Drogas ilegales: </label>
-                    <input type="checkbox" id="drogas-yes" name="drogas" value="yes"/>
-                    <label htmlFor="drogas-yes">Sí</label>
+                <div className="drogas-info">
+                  <label>Tipo: </label>
+                  <input
+                    type="text"
+                    name="drogas-type"
+                    className="input-identificacion"
+                  />
+                  <label>Cantidad y frecuencia: </label>
+                  <input
+                    type="text"
+                    name="drogas-quantity"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                    <input type="checkbox" id="drogas-no" name="drogas" value="no"/>
-                    <label htmlFor="drogas-no">No</label>
+                <div className="drogas-age-info">
+                  <label>Edad de inicio: </label>
+                  <input
+                    type="text"
+                    name="drogas-age"
+                    className="input-identificacion"
+                  />
 
-                    <div className="drogas-info">
-                      <label>Tipo: </label>
-                      <input type="text" name="drogas-type" className="input-identificacion"/>
-                      <label>Cantidad y frecuencia: </label>
-                      <input type="text" name="drogas-quantity" className="input-identificacion"/>
-                    </div>
+                  <label>Edad de abandono (si aplica): </label>
+                  <input
+                    type="text"
+                    name="drogas-age-end"
+                    className="input-identificacion"
+                  />
+                </div>
 
-                    <div className="drogas-age-info">
-                      <label>Edad de inicio: </label>
-                      <input type="text" name="drogas-age" className="input-identificacion"/>
+                <div className="drogas-duration-info">
+                  <label>Duración del hábito (en años):</label>
+                  <input
+                    type="text"
+                    name="drogas-duration"
+                    className="input-identificacion"
+                  />
+                </div>
+              </div>
 
-                      <label>Edad de abandono (si aplica): </label>
-                      <input type="text" name="drogas-age-end" className="input-identificacion"/>
-                    </div>
+              {/* Farmacos */}
+              <div className="farmaceutica">
+                <label>Medicamentos: </label>
+                <input
+                  type="checkbox"
+                  id="farmaceutica-yes"
+                  name="farmaceutica"
+                  value="yes"
+                />
+                <label htmlFor="farmaceutica-yes">Sí</label>
 
-                    <div className="drogas-duration-info">
-                      <label>Duración del hábito (en años):</label>
-                      <input type="text" name="drogas-duration" className="input-identificacion"/>
-                    </div>
-                  </div>
+                <input
+                  type="checkbox"
+                  id="farmaceutica-no"
+                  name="farmaceutica"
+                  value="no"
+                />
+                <label htmlFor="farmaceutica-no">No</label>
 
-                  {/* Farmacos */}
-                  <div className="farmaceutica">
-                    <label>Medicamentos: </label>
-                    <input type="checkbox" id="farmaceutica-yes" name="farmaceutica" value="yes"/>
-                    <label htmlFor="farmaceutica-yes">Sí</label>
+                <div className="farmaceutica-info">
+                  <label>Cantidad y frecuencia: </label>
+                  <input
+                    type="text"
+                    name="farmaceutica-quantity"
+                    className="input-identificacion input-small"
+                  />
+                </div>
 
-                    <input type="checkbox" id="farmaceutica-no" name="farmaceutica" value="no"/>
-                    <label htmlFor="farmaceutica-no">No</label>
-
-                    <div className="farmaceutica-info">
-                      <label>Cantidad y frecuencia: </label>
-                      <input type="text" name="farmaceutica-quantity" className="input-identificacion input-small"/>
-                    </div>
-
-                    <div className="medicamentos-info">
-                      <label>Nombre de medicamentos: </label>
-                      <textarea name="farmaceutica-name" className="input-identificacion" rows="4"></textarea>
-                    </div>
-                  </div>
-
-
-
-
+                <div className="medicamentos-info">
+                  <label>Nombre de medicamentos: </label>
+                  <textarea
+                    name="farmaceutica-name"
+                    className="input-identificacion"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
             </div>
           </form>
 

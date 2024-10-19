@@ -60,102 +60,104 @@
                     </select>
                 </div>
 
-                <table className="patient-table">
-                    <thead>
-                        <tr>
-                            <th>No de expediente</th>
-                            <th>Paciente</th>
-                            <th>Tipo de examen</th>
-                            <th>Estado</th>
-                            <th>Fecha</th>
-                            <th>Hora</th>
-                        </tr>
-                    </thead>
+                <div className="patient-table-container">
+                    <table className="patient-table">
+                        <thead>
+                            <tr>
+                                <th>No de expediente</th>
+                                <th>Paciente</th>
+                                <th>Tipo de examen</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        {/* No1 */}
-                        {/* Orina */}
-                        <tr>
-                            <td 
-                                className="tooltip-container"
+                        <tbody>
+                            {/* No1 */}
+                            {/* Orina */}
+                            <tr>
+                                <td 
+                                    className="tooltip-container"
 
-                            >
-                                <span
-                                    className="tooltip-button"
-                                    onClick={() => handleTooltipClick("161FEBCM07027201", "orina")}
                                 >
-                                    161FEBCM07027201
-                                </span>
+                                    <span
+                                        className="tooltip-button"
+                                        onClick={() => handleTooltipClick("161FEBCM07027201", "orina")}
+                                    >
+                                        161FEBCM07027201
+                                    </span>
 
-                                {tooltipVisible && selectediD === "161FEBCM07027201" && (
-                                    <div className="tooltip-content">
-                                        <div
-                                            className="tooltip-option"
-                                            onClick={() => handleOptionClick("Orden")}
-                                        >
-                                            Orden
+                                    {tooltipVisible && selectediD === "161FEBCM07027201" && (
+                                        <div className="tooltip-content">
+                                            <div
+                                                className="tooltip-option"
+                                                onClick={() => handleOptionClick("Orden")}
+                                            >
+                                                Orden
+                                            </div>
+
+                                            <div
+                                                className="tooltip-option"
+                                                onClick={() => handleOptionClick("Resultado")}
+                                            >
+                                                Resultado
+                                            </div>
                                         </div>
+                                    )}
+                                    
+                                </td>
+                                <td>Nicolas Maduro Moros</td>
+                                <td>Análisis de orina</td>
+                                <td><span className="status status-completado">Completado</span></td>
+                                <td>20/10/2022</td>
+                                <td>8:00 am</td>
+                            </tr>
 
-                                        <div
-                                            className="tooltip-option"
-                                            onClick={() => handleOptionClick("Resultado")}
-                                        >
-                                            Resultado
-                                        </div>
-                                    </div>
-                                )}
-                                
-                            </td>
-                            <td>Nicolas Maduro Moros</td>
-                            <td>Análisis de orina</td>
-                            <td><span className="status status-completado">Completado</span></td>
-                            <td>20/10/2022</td>
-                            <td>8:00 am</td>
-                        </tr>
-
-                        {/* No2 */}
-                        {/* Sangre */}
-                        <tr>
-                            <td
-                                className="tooltip-container"
-                            >
-
-                                <span
-                                    className="tooltip-button"
-                                    onClick={() => handleTooltipClick("161FEBCM07027202", "sangre")}
+                            {/* No2 */}
+                            {/* Sangre */}
+                            <tr>
+                                <td
+                                    className="tooltip-container"
                                 >
-                                    161FEBCM07027202
-                                </span>
 
-                                {tooltipVisible && selectediD === "161FEBCM07027202" && (
-                                    <div className="tooltip-content">
-                                        <div
-                                            className="tooltip-option"
-                                            onClick={() => handleOptionClick("Orden")}
-                                        >
-                                            Orden
+                                    <span
+                                        className="tooltip-button"
+                                        onClick={() => handleTooltipClick("161FEBCM07027202", "sangre")}
+                                    >
+                                        161FEBCM07027202
+                                    </span>
+
+                                    {tooltipVisible && selectediD === "161FEBCM07027202" && (
+                                        <div className="tooltip-content">
+                                            <div
+                                                className="tooltip-option"
+                                                onClick={() => handleOptionClick("Orden")}
+                                            >
+                                                Orden
+                                            </div>
+
+                                            <div
+                                                className="tooltip-option"
+                                                onClick={() => handleOptionClick("Resultado")}
+                                            >
+                                                Resultado
+                                            </div>
                                         </div>
+                                    )}
 
-                                        <div
-                                            className="tooltip-option"
-                                            onClick={() => handleOptionClick("Resultado")}
-                                        >
-                                            Resultado
-                                        </div>
-                                    </div>
-                                )}
+                                </td>
+                                <td>Nicolas Maduro Moros</td>
+                                <td>Análisis de sangre</td>
+                                <td><span className="status status-pendiente">Retrasado</span></td>
+                                <td>20/10/2022</td>
+                                <td>8:00 am</td>
+                            </tr>
+                            
 
-                            </td>
-                            <td>Nicolas Maduro Moros</td>
-                            <td>Análisis de sangre</td>
-                            <td><span className="status status-pendiente">Retrasado</span></td>
-                            <td>20/10/2022</td>
-                            <td>8:00 am</td>
-                        </tr>
-                        
-
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
 
                 {/* Aqui se abren la orden */}
                 

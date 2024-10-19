@@ -60,3 +60,7 @@
   z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
 
+.patient-table-container {
+  overflow-x: auto;
+  padding: 0 16px;
+}

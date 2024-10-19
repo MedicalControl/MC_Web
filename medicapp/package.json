@@ -2,20 +2,31 @@
   "name": "medicapp",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://mc-api-0lo7.onrender.com",
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+=======
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.4",
+    "@mui/material": "^6.1.4",
+>>>>>>> CriCri
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
     "lucide-react": "^0.447.0",
     "react": "^18.3.1",
     "react-calendar": "^5.0.0",
     "react-dom": "^18.3.1",
+    "react-google-recaptcha": "^3.1.0",
     "react-router-dom": "^6.26.1",
     "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
+    "sweetalert2": "^11.14.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
