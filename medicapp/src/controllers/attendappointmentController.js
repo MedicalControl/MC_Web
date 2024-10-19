@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import Swal from "sweetalert2";
 
 export const createAppointment = async (
@@ -15,24 +14,22 @@ export const createAppointment = async (
 
   try {
     const response = await axios.post(url, {
-        headers: {
-            'authorization': localStorage.getItem('token')
-        }, params: {
-            fk_agendacita: fk_agendacita,
-            motivo: motivo,
-            sintomas: sintomas,
-            diagnostico: diagnostico,
-            indicaciones: indicaciones,
-            recetas: {
-              tratamientos: tratamientos,
-            },
-        }
+      fk_agendacita,
+      motivo,
+      sintomas,
+      diagnostico,
+      indicaciones,
+      recetas: {
+        tratamientos
+      }
+    }, {
+      headers: {
+        'authorization': localStorage.getItem('token')
+      }
     });
 
-
     console.log(`Cita creada: ${JSON.stringify(response.data)}`);
-    // si todo esuvo ok
-    // Alert de éxito
+
     Swal.fire({
       title: "Cita creada",
       text: "La cita fue creada correctamente",
@@ -44,29 +41,22 @@ export const createAppointment = async (
       }
     });
   } catch (error) {
-    // Manejo de errores
-    if (error.response && error.response.status === 400) {
-        Swal.fire({
-          title: "Datos incorrectos",
-          text: error.response.data.message,
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      } else if (error.response && error.response.status === 500) {
-        Swal.fire({
-          title: "Error de servidor",
-          text: "Hubo un problema al crear la cita",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      } else {
-        Swal.fire({
-          title: "Error desconocido",
-          text: "No se pudo crear la cita",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
+    console.error(`Error al crear la cita: ${error}`);
+
+    let errorMessage = "No se pudo crear la cita";
+    if (error.response) {
+      if (error.response.status === 400) {
+        errorMessage = "Datos incorrectos: " + error.response.data.message;
+      } else if (error.response.status === 500) {
+        errorMessage = "Error de servidor";
       }
-      console.error(`El error fue: ${error}`);
     }
+
+    Swal.fire({
+      title: "Error",
+      text: errorMessage,
+      icon: "error",
+      confirmButtonText: "OK",
+    });
   }
+};
