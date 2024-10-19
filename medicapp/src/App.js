@@ -16,6 +16,8 @@ import SideBar from './components/search/SideBar';
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
 
+import { MedicalRecordProvider } from './context/MedicalRecordContext';
+
 // con este componente muestra el SideBar y Header mientras no este en la ruta /login
 function Layout({ children, sideBarState, onHomeClick }) {
     const location = useLocation();
@@ -38,6 +40,7 @@ function Layout({ children, sideBarState, onHomeClick }) {
 function App() {
     const location = useLocation();
     const [sideBarState, setSideBarState] = useState('default');
+    const [record, setRecord] = useState(null);
 
     const handleExpedienteClick = () => {
         setSideBarState('expediente'); // Cambia el estado a expediente
@@ -81,7 +84,7 @@ function App() {
                 >
                     <Routes location={location}>
                         <Route path="/login" element={<LoginForm />} />
-                        <Route path="/" element={<Table onExpedienteClick={handleExpedienteClick} />} />
+                        <Route path="/" element={<Table onExpedienteClick={handleExpedienteClick} setRecord={setRecord} />} />
                         <Route path="/laboratorio" element={<LabTable />} />
                         <Route path="/agenda" element={<Agenda />} />
                         <Route path="/agenda2" element={<Agenda2 />} /> 
@@ -100,7 +103,9 @@ function App() {
 function AppWrapper() {
     return (
         <Router>
-            <App />
+            <MedicalRecordProvider>
+                <App />
+            </MedicalRecordProvider>
         </Router>
     );
 }

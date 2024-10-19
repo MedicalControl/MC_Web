@@ -4,7 +4,24 @@ import { fetchAppointments } from "../../controllers/appointmentController";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import { fetchMe } from "../../controllers/meController";
 
-const Table = ({ onExpedienteClick }) => {
+import { useMedicalRecord } from "../../context/MedicalRecordContext";
+import { fetchMedicalRecord } from "../../controllers/medicalRecordController";
+
+
+const Table = ({ appointment, onExpedienteClick }) => {
+
+    const { setMedicalRecord } = useMedicalRecord();
+
+    const numeroExpedienteClick = (appointment) => {
+        if (appointment && appointment.paciente && appointment.paciente.expediente.length > 0) {
+            console.log("El nro de expediente si existe")
+            const numeroExpediente = appointment.paciente.expediente[0].nroexpediente;
+            fetchMedicalRecord(numeroExpediente, setMedicalRecord);
+        } else {
+            console.error("El número de expediente no está disponible.");
+        }
+    }
+
     const navigate = useNavigate(); // Inicializa useNavigate
     const [appointments, setAppointments] = useState([]);
     const [cantidad, setCantidad] = useState(0);
@@ -78,13 +95,15 @@ const Table = ({ onExpedienteClick }) => {
                                     <td>{appointment.paciente.nombres}</td>
                                     <td>{appointment.paciente.apellidos}</td>
                                     <td>
-                                        {appointment.paciente.expediente.length > 0 ? (
-                                            <button className="btn-expediente" onClick={onExpedienteClick}>
+                                            <button
+                                                className="btn-expediente"
+                                                onClick={() => {
+                                                    numeroExpedienteClick(appointment); // Pasa el appointment a la función
+                                                    onExpedienteClick(); // Maneja el estado del sidebar
+                                                }}
+                                            >
                                                 {appointment.paciente.expediente[0].nroexpediente}
                                             </button>
-                                        ) : (
-                                            'No disponible'
-                                        )}
                                     </td>
                                     <td>
                                         <span className={`status status-${appointment.estado.toLowerCase()}`}>

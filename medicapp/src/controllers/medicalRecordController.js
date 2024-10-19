@@ -2,10 +2,15 @@ import axios from "axios";
 
 export const fetchMedicalRecord = async (numero, setRecord) => {
     try {
-        const url = "api/app/medicalRecord"
+        const url = `api/app/medicalRecord`;
+        
+        console.log(`Numero: ${numero}`);
 
         const response = await axios.get(url, {
-            numero: numero  
+            headers: {
+                'authorization': localStorage.getItem('token')
+            },
+            params: {numero: numero}  
         })
 
         setRecord(response.data);
