@@ -16,12 +16,12 @@ export default function SegundaHoja() {
           </label>
           <div style={{ display: "flex" }}>
             <label>
-              <input type="checkbox" name="enfermedades" value="otros" />
+              <input className="input-identify" type="checkbox" name="enfermedades" value="otros" />
               Si
             </label>
             <div style={{ marginLeft: "10px" }}>
               <label>
-                <input type="checkbox" name="enfermedades" value="otros" />
+                <input className="input-identify" type="checkbox" name="enfermedades" value="otros" />
                 No
               </label>
             </div>
@@ -31,12 +31,14 @@ export default function SegundaHoja() {
           <div style={{ display: "flex" }}>
             <label style={{ width: "150px" }}>Hábitos:Horas de sueño</label>
             <input
+              className="input-identify"
               type="text"
               name="telefono"
               style={{ borderBottom: "1px solid #c5c5c5", width: "10px" }}
             />
             <label style={{ width: "100px" }}>Horas laborales</label>
             <input
+              className="input-identify"
               type="text"
               name="telefono"
               style={{ borderBottom: "1px solid #c5c5c5" }}
@@ -47,6 +49,7 @@ export default function SegundaHoja() {
               Tipo y hora de actvidad física:
             </label>
             <input
+              className="input-identify"
               type="text"
               name="telefono"
               style={{ borderBottom: "1px solid #c5c5c5" }}
@@ -55,6 +58,7 @@ export default function SegundaHoja() {
           <div style={{ display: "flex" }}>
             <label style={{ width: "80px" }}>Alimentación</label>
             <input
+              className="input-identify"
               type="text"
               name="telefono"
               style={{ borderBottom: "1px solid #c5c5c5" }}
@@ -63,18 +67,20 @@ export default function SegundaHoja() {
           <div style={{ display: "flex" }}>
             <label style={{ width: "50px" }}>Tabaco</label>
             <label>
-              <input type="checkbox" name="enfermedades" value="otros" />
+              
+              <input type="checkbox" name="enfermedades" value="otros" className="input-identify"/>
               Si
             </label>
             <div style={{ marginLeft: "10px" }}>
               <label>
-                <input type="checkbox" name="enfermedades" value="otros" />
+                <input type="checkbox" name="enfermedades" value="otros" className="input-identify"/>
                 No
               </label>
             </div>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <label style={{ width: "30px" }}>Tipo</label>
               <input
+                className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "60px" }}
@@ -83,6 +89,7 @@ export default function SegundaHoja() {
             <div style={{ display: "flex", marginLeft: "10px" }}>
               <label style={{ width: "140px" }}>Cantidad y precuencia</label>
               <input
+                className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: '190px' }}
@@ -93,6 +100,7 @@ export default function SegundaHoja() {
             <label style={{ width: "90px" }}>Edad de inicio</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+                className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "60px" }}
@@ -103,6 +111,7 @@ export default function SegundaHoja() {
                 Edad de abandono(Sin aplica)
               </label>
               <input
+                className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5" }}
@@ -115,6 +124,7 @@ export default function SegundaHoja() {
             </label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+                className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "60px" }}
@@ -122,12 +132,12 @@ export default function SegundaHoja() {
             </div>
             <label style={{ width: "100px" }}>Drogas ilegales</label>
             <label>
-              <input type="checkbox" name="enfermedades" value="otros" />
+              <input type="checkbox" name="enfermedades" value="otros" className="input-identify"/>
               Si
             </label>
             <div style={{ marginLeft: "10px" }}>
               <label>
-                <input type="checkbox" name="enfermedades" value="otros" />
+                <input type="checkbox" name="enfermedades" value="otros" className="input-identify"/>
                 No
               </label>
             </div>
@@ -135,6 +145,7 @@ export default function SegundaHoja() {
             <input
               type="text"
               name="telefono"
+              className="input-identify"
               style={{ borderBottom: "1px solid #c5c5c5", width: "60px" }}
             />
           </div>
@@ -143,11 +154,13 @@ export default function SegundaHoja() {
             <input
               type="text"
               name="telefono"
+              className="input-identify"
               style={{ borderBottom: "1px solid #c5c5c5", width: "10px" }}
             />
             <label style={{ width: "90px" }}>Edad de inicio</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "30px" }}
@@ -156,6 +169,7 @@ export default function SegundaHoja() {
             <label style={{ width: "170px" }}>Edad de abandono(si aplica)</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "30px" }}
@@ -169,6 +183,7 @@ export default function SegundaHoja() {
             </label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "60px" }}
@@ -176,12 +191,12 @@ export default function SegundaHoja() {
             </div>
             <label style={{ width: "66px" }}>Farmacos</label>
             <label>
-              <input type="checkbox" name="enfermedades" value="otros" />
+              <input className="input-identify" type="checkbox" name="enfermedades" value="otros" />
               Si
             </label>
             <div style={{ marginLeft: "10px" }}>
               <label>
-                <input type="checkbox" name="enfermedades" value="otros" />
+                <input className="input-identify" type="checkbox" name="enfermedades" value="otros" />
                 No
               </label>
             </div>
@@ -190,6 +205,7 @@ export default function SegundaHoja() {
             <label style={{ width: "368px" }}>Número de medicamentos que está recibiendo actualmente:</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "220px" }}
@@ -200,6 +216,7 @@ export default function SegundaHoja() {
             <label style={{ width: "230px" }}>Nombre y posología de los fármacos:</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "340px" }}
@@ -210,6 +227,7 @@ export default function SegundaHoja() {
             <label style={{ width: "90px" }}>Otros hábitos</label>
             <div style={{ display: "flex", marginLeft: "5px" }}>
               <input
+              className="input-identify"
                 type="text"
                 name="telefono"
                 style={{ borderBottom: "1px solid #c5c5c5", width: "480px" }}

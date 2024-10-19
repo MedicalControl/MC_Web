@@ -54,7 +54,7 @@ export default function HojaIdentificacion({ closeTable }) {
             <div style={{ fontSize: "20px", fontWeight: "600" }}>
               Hoja de Identificación Clínica
             </div>
-            <img src="pngwing.com 1.png" alt="Logo" width={75} height={50} />
+            <img src="saludLogo.png" alt="Logo" width={70} height={70} />
           </div>
           <div className="box-container-header">
             <div>Fecha:</div>
@@ -103,6 +103,7 @@ function PrimeraHoja() {
             type="text"
             name="nombres"
             style={{ borderBottom: "1px solid #c5c5c5" }}
+            className="input-identify"
           />
         </div>
         <div>
@@ -113,6 +114,8 @@ function PrimeraHoja() {
             <input
               type="text"
               name="cedula"
+              className="input-identify"
+
               style={{
                 width: "10px",
                 marginLeft: "10px",
@@ -123,6 +126,7 @@ function PrimeraHoja() {
               Edad:
             </label>
             <input
+              className="input-identify"
               type="text"
               name="edad"
               style={{
@@ -137,6 +141,7 @@ function PrimeraHoja() {
               </label>
 
               <div
+                className="input-identify"
                 style={{
                   marginTop: "10px",
                   display: "flex",
@@ -145,7 +150,9 @@ function PrimeraHoja() {
               >
                 <label style={{ marginLeft: "10px" }}>
                   M
+                  
                   <input
+                    className="input-identify"
                     type="radio"
                     name="sexo"
                     value="M"
@@ -155,6 +162,7 @@ function PrimeraHoja() {
                 <label style={{ marginLeft: "10px" }}>
                   F
                   <input
+                    className="input-identify"
                     type="radio"
                     name="sexo"
                     value="F"
@@ -172,6 +180,7 @@ function PrimeraHoja() {
             <label style={{ marginTop: "10px" }}>Estado civil:</label>
           </div>
           <input
+            className="input-identify"
             type="text"
             name="cedula"
             style={{
@@ -184,6 +193,7 @@ function PrimeraHoja() {
             Ocupación u oficio
           </label>
           <input
+            className="input-identify"
             type="text"
             name="edad"
             style={{
@@ -202,6 +212,7 @@ function PrimeraHoja() {
             </label>
           </div>
           <input
+            className="input-identify"
             type="text"
             name="cedula"
             style={{
@@ -217,6 +228,7 @@ function PrimeraHoja() {
               <label style={{ marginTop: "10px" }}>Departamento:</label>
             </div>
             <input
+              className="input-identify"
               type="text"
               name="cedula"
               style={{
@@ -229,6 +241,7 @@ function PrimeraHoja() {
               Municipio:
             </label>
             <input
+              className="input-identify"
               type="text"
               name="edad"
               style={{
@@ -245,6 +258,7 @@ function PrimeraHoja() {
               <label style={{ marginTop: "10px" }}>Teléfono:</label>
             </div>
             <input
+              className="input-identify"
               type="text"
               name="cedula"
               style={{
@@ -257,6 +271,7 @@ function PrimeraHoja() {
               Celular:
             </label>
             <input
+              className="input-identify"
               type="text"
               name="edad"
               style={{
@@ -273,6 +288,7 @@ function PrimeraHoja() {
               <label style={{ marginTop: "10px" }}>Nombre de la madre:</label>
             </div>
             <input
+              className="input-identify"
               type="text"
               name="cedula"
               style={{
@@ -285,6 +301,7 @@ function PrimeraHoja() {
               Nombre del padre:
             </label>
             <input
+              className="input-identify"
               type="text"
               name="edad"
               style={{

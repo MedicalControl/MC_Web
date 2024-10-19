@@ -134,3 +134,12 @@
 .atrasBtn, .siguienteBtn{
   background-color: #2AB9B7;
 }
+
+.input-identify {
+  padding: 6px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    flex: 2 1;
+}
