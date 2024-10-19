@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./SideBar.css";
 import { Link, useLocation } from "react-router-dom";
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 const SideBar = ({sidebarState, onHomeClick}) => {
   const location = useLocation();
@@ -183,24 +184,13 @@ const SideBar = ({sidebarState, onHomeClick}) => {
           <>
 
             {/* Chat */}
-            <button className="menu-btn" onClick={onHomeClick}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="ionicon"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  d="M408 64H104a56.16 56.16 0 00-56 56v192a56.16 56.16 0 0056 56h40v80l93.72-78.14a8 8 0 015.13-1.86H408a56.16 56.16 0 0056-56V120a56.16 56.16 0 00-56-56z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-                <circle cx="160" cy="216" r="32" />
-                <circle cx="256" cy="216" r="32" />
-                <circle cx="352" cy="216" r="32" />
-              </svg>
+            <Link to={"/identificacion"} onClick={() => {handleSectionClick("identificacion");}}>
+            <button className={`menu-btn ${activeSection === "identificacion" ? "active" : ""}`}>
+              <AssignmentIndIcon 
+                className={activeSection === "identificacion" ? "active-icon" : ""}
+              />
             </button>
+            </Link>
           </>
         )}
 
