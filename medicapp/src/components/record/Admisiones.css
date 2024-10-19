@@ -1,0 +1,153 @@
+.container {
+    padding: 24px;
+    background-color: #F4F4F4; /* Ajusta el color según sea necesario */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.heading-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+  text-align: center; /* Centra el texto en pantallas pequeñas */
+  padding: 16px; /* Añade un poco de espacio alrededor del contenedor */
+}
+
+.heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 4px 8px; /* Añade un espacio alrededor de cada encabezado */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .heading {
+      font-size: 1rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
+      margin: 4px; /* Ajusta el margen para una mejor presentación */
+  }
+
+  .heading-container {
+      flex-direction: column; /* Cambia la dirección de los elementos a columna en pantallas pequeñas */
+  }
+}
+
+  
+  .highlight {
+    color: #14b8a6; /* Color teal */
+    font-weight: 600;
+    margin: 0 8px; /* Añade espacio alrededor del nombre */
+  }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    border: 1px solid #e5e7eb; /* Color del borde */
+    border-radius: 4px;
+    padding: 8px;
+    flex-grow: 1;
+  }
+
+  .sort-select {
+    margin-left: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .search-container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: stretch; /* Alinea los elementos para que ocupen todo el ancho */
+    }
+
+    .search-input {
+        margin-bottom: 8px; /* Añade un espacio inferior en pantallas pequeñas */
+    }
+
+    .sort-select {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    }
+}
+  
+  .patient-table-container {
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
+  .patient-table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: solid #fcfcfc 1px;
+  }
+
+  .patient-table th,
+  .patient-table td {
+    padding: 15px;
+  }
+  
+  .patient-table th {
+    color: #6b7280; /* Color muted-foreground */
+    border-top: none;
+    border-bottom:solid #F4F4F4 2px;
+  }
+
+  .patient-table td:first-child, .patient-table th:first-child {
+    border-left: none;
+  }
+  
+
+  .status {
+    border-radius: 9999px;
+    padding: 4px 8px;
+    display: inline-block;
+    width: 120px;
+  }
+
+  .status-realizado {
+    color: white;
+    background-color: #5cb85c;
+  }
+
+  .status-revision {
+    background-color: #5bc0de; /* Color accent */
+    color: white;
+  }
+
+  .status-pendiente {
+    color: white;
+    background-color: #f0ad4e;
+  }
+
+  .status-cancelado {
+    color: white;
+    background-color: #C7253E;
+  }
+
+  .btn-expediente {
+    background-color: #40cab0; /* Azul */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-nada {
+    background-color: rgb(196, 192, 192); /* Azul */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+  }

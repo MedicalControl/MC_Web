@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SideBar.css";
 import { Link, useLocation } from "react-router-dom";
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import FolderOpenOutlinedIcon from '@mui/icons-material/FolderOpenOutlined';
 
 const SideBar = ({sidebarState, onHomeClick}) => {
   const location = useLocation();
@@ -183,11 +184,20 @@ const SideBar = ({sidebarState, onHomeClick}) => {
         {sidebarState === 'expediente' && (
           <>
 
-            {/* Chat */}
+            {/* Identificacion */}
             <Link to={"/identificacion"} onClick={() => {handleSectionClick("identificacion");}}>
             <button className={`menu-btn ${activeSection === "identificacion" ? "active" : ""}`}>
               <AssignmentIndIcon 
                 className={activeSection === "identificacion" ? "active-icon" : ""}
+              />
+            </button>
+            </Link>
+
+            {/* Expedientes */}
+            <Link to={"/admisiones"} onClick={() => {handleSectionClick("admisiones");}}>
+            <button className={`menu-btn ${activeSection === "admisiones" ? "active" : ""}`}>
+              <FolderOpenOutlinedIcon 
+                className={activeSection === "admisiones" ? "active-icon" : ""}
               />
             </button>
             </Link>

@@ -15,6 +15,7 @@ import Expediente from './components/record/Expediente';
 import SideBar from './components/search/SideBar';
 import './App.css';
 import LabTable from './components/laboratory/LabTable';
+import Admisiones from './components/record/Admisiones';
 
 import { MedicalRecordProvider } from './context/MedicalRecordContext';
 
@@ -71,6 +72,8 @@ function App() {
             document.title = 'Pacientes Pendientes';
         } else if (location.pathname === '/expediente') {
             document.title = 'Expediente';
+        } else if (location.pathname === '/admisiones') {
+            document.title = 'Admisiones';
         }
     }, [location]);
 
@@ -93,6 +96,7 @@ function App() {
                         <Route path="/test" element={<Test />} />
                         <Route path="/pacientes" element={<Pacientes />} />
                         <Route path="/expediente" element={<Expediente />} />
+                        <Route path="/admisiones" element={<Admisiones />} />
                     </Routes>
                 </CSSTransition>
             </TransitionGroup>
